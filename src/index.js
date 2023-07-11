@@ -9,6 +9,7 @@ import rootReducer from './Reducers';
 import { getMembre } from './actions/membre.action';
 import { getMembreEnfant } from './actions/Enfant.action';
 import { getMouvement } from './actions/Mouvement.action';
+import { getDepartement } from './actions/Departemant.action';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -18,6 +19,7 @@ const store = configureStore({
 store.dispatch(getMembre())
 store.dispatch(getMembreEnfant())
 store.dispatch(getMouvement())
+store.dispatch(getDepartement())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
