@@ -1,9 +1,10 @@
 import axios from "axios";
 import Token from "../loadingErr/Token";
+import Swal from "sweetalert2";
 
 export const GET_MEMBRE = "GET_MEMBRE";
 export const ADD_MEMBRE  = "ADD_MEMBRE";
-const url = "http://localhost:5001/api/";
+const url = "http://localhost:5000/api/";
 
 
 export const getMembre = () => {
@@ -24,7 +25,7 @@ export const getMembre = () => {
 
 export const addMembre = (data) => {
     return(dispatch) => {
-        return axios.post(`${url}membre`,{data},{
+        return axios.post(`${url}membre`,{"nom":"Rabby Kikwele","postnom":"ss","prenom":"ss","email":"vvvaarabbymbamu@gmail.com","sexe":"H","telephone":"0822662472","adresse":"1rue Numéro 13","datenaissance":"2023-07-10","etatcivil":"sss","profession":"sss","activite":"rabby@gmail.com","password":"12345"},{
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -32,9 +33,36 @@ export const addMembre = (data) => {
             },
         }).then((response) => {
                 dispatch({type : ADD_MEMBRE, payload : data})
+                Swal.fire({
+                    icon: 'success',
+                    text: `${response.data.message}`,
+                    confirmButtonText: 'OK'
+                })
             }).catch((error) => {
-                alert(error)
+             
+                if (error.response && error.response.status === 422) {
+                    if (error.response.data.message.includes('The nom field is required')) {
+                      Swal.fire({
+                        icon: 'error',
+                        text: 'Le champ "nom" est requis.',
+                        confirmButtonText: 'OK',
+                      });
+                    } else {
+                      Swal.fire({
+                        icon: 'error',
+                        text: `${error.response.data.message}`,
+                        confirmButtonText: 'OK',
+                      });
+                    }
+                  } else if (error.response.status === 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Erreur de la connexion !!!',
+                        confirmButtonText: 'OK'
+                    })
+                } 
             })
     }
 }
+
 

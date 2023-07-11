@@ -26,9 +26,9 @@ const Addmembre = () => {
             activite : form.current[10].value,
             password : form.current[11].value,
         }
-
         dispatch(addMembre(postData));
-        form.current.reset();
+  
+        //form.current.reset();
     }
     return (
         <div class="wrapper">
@@ -60,7 +60,10 @@ const Addmembre = () => {
                                             <input type="email" class="form-control" placeholder="email" /><br />
                                         </div>
                                         <div className="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Sexe" />
+                                            <select class="form-control">
+                                                <option value="F">Femme</option>
+                                                <option value="H">Homme</option>
+                                            </select>
                                         </div>
                                         <div className="col-md-4">
                                             <input type="text" class="form-control" placeholder="Telephone" />
@@ -69,7 +72,7 @@ const Addmembre = () => {
                                             <input type="text" class="form-control" placeholder="Adresse" /><br />
                                         </div>
                                         <div className="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Date de naissance" />
+                                            <input type="date" class="form-control" placeholder="Date de naissance" />
                                         </div>
                                         <div className="col-md-4">
                                             <input type="text" class="form-control" placeholder="Etat civil" />

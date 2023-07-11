@@ -7,7 +7,7 @@ import Loading from "../loadingErr/Loading";
 const Login = () => {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
-    const url = "http://localhost:5001/api/";
+    const url = "http://localhost:5000/api/";
     const navigate = useNavigate();
     const [loading, setloading] = useState(false);
 
