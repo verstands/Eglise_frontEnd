@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addMembreAffecter } from "../../actions/Affecter.action";
 
 const AffecterMembre = () => {
     const form = useRef();
@@ -9,12 +10,17 @@ const AffecterMembre = () => {
     const departement = useSelector((state) => state.deparmentReduceur)
 
     const handleChangeRadio = (e) => {
-        setselectCash(e.target.value)
-        alert(selectCash)
+        setselectCash(e.target.value);
     }
     const handleSave = async (e) => {
         e.preventDefault();
-        alert('salut le monde');
+        const data = {
+            nom_membre : form.current[0].value,
+            departement_id : form.current[1].value,
+            state : selectCash
+        }
+        dispatch(addMembreAffecter(data))
+        form.current.reset();
     }
     return (
         <>
