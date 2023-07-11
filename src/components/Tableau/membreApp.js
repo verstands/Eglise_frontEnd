@@ -15,7 +15,6 @@ const TableauMembre = ({ nom, postnom, prenom, email, telephone }) => {
                     <button className="badge bg-danger btn"><span className="badge bg-danger">Delete</span></button>&nbsp;
                     <Link to="/updatemembre" className="badge bg-success btn"><span className="badge bg-success">Update</span></Link>&nbsp;
                     <Link to="/detailmembre" className="badge bg-success btn"><span className="badge bg-success">Detail</span></Link>&nbsp;
-                    <Link to="/addmembre" className="badge bg-success btn"><span className="badge bg-success">Adds</span></Link>
                 </td>
             </tr>
         </>

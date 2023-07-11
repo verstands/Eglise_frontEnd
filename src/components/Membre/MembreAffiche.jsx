@@ -12,6 +12,9 @@ const MembreAffiche = () => {
                 <div class="card-header">
                     <h5 class="card-title mb-0 text-center">Liste des membres</h5>
                 </div>
+                <div className="col-md-6">
+                &nbsp;&nbsp;<Link to="/addmembre" className="btn btn-success btn"><span className="badge bg-success">Ajouter un membre</span></Link>
+                </div>
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>

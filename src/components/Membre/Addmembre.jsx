@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,9 +9,9 @@ const Addmembre = () => {
     const form = useRef()
     const dispatch = useDispatch();
 
-    const handleSave = (e) => {
+    const handleSave = async (e) => {
         e.preventDefault();
-        console.log(form);
+
         const postData = {
             nom : form.current[0].value,
             postnom : form.current[1].value,
@@ -28,7 +28,7 @@ const Addmembre = () => {
         }
         dispatch(addMembre(postData));
   
-        //form.current.reset();
+        form.current.reset();
     }
     return (
         <div class="wrapper">
@@ -46,7 +46,6 @@ const Addmembre = () => {
                             <div class="card-body">
                                 <form ref={form} onSubmit={(e) => handleSave(e)}>
                                     <div className="row">
-
                                         <div className="col-md-4">
                                             <input type="text" class="form-control" placeholder="Nom" /><br />
                                         </div>

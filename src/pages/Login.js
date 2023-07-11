@@ -13,7 +13,7 @@ const Login = () => {
 
     const handleConnecter = (e) => {
         e.preventDefault();
-         axios.post(`${url}login`,
+        axios.post(`${url}login`,
             {
                 email: email,
                 password: password
