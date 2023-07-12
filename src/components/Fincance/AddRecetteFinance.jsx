@@ -20,31 +20,36 @@ const AddRecetteFinance = () => {
                             <div class="card-body">
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <input type="text" class="form-control" placeholder="Date" /><br />
+                                        <label htmlFor="">N°Fiche</label>
+                                        <input type="text" class="form-control" value="frsh52MP"  /><br />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="text" class="form-control" placeholder="Culte" />
+                                        <label htmlFor="">Culte</label>
+                                        <input type="text" class="form-control"  />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="text" class="form-control" placeholder="Type offrande" />
+                                        <label htmlFor="Montant">Type d'offrande</label>
+                                        <input type="number" class="form-control"  />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Montant USD" /><br />
+                                        <label htmlFor="Montant">Montant</label>
+                                        <input type="number" class="form-control"  />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Montatnt CDF" /><br />
+                                        <label htmlFor="Montant">Devise</label>
+                                        <input type="number" class="form-control"  />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Nombre homme" /><br />
+                                        <label htmlFor="">Nombre Homme</label>
+                                        <input type="number" class="form-control"  /><br />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Nombre femme" /><br />
+                                        <label htmlFor="">Nombre de Femme</label>
+                                        <input type="number" class="form-control"  /><br />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Nombre enfant" /><br />
-                                    </div>
-                                    <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Effectif" /><br />
+                                        <label htmlFor="">Nombre Enfant</label>
+                                        <input type="number" class="form-control" /><br />
                                     </div>
                                     <div className="col-md-12">
                                        <button className="btn btn-primary">Enregistrer</button>

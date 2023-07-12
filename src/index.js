@@ -13,6 +13,8 @@ import { getDepartement } from './actions/Departemant.action';
 import { getNouveaune } from './actions/Nouveau.action';
 import { getCategorie } from './actions/CategorieAction';
 import { getCulte } from './actions/CulteAction';
+import { getDepense } from './actions/DepenseAction';
+import { getFinance } from './actions/FinanceAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -26,6 +28,8 @@ store.dispatch(getDepartement())
 store.dispatch(getNouveaune())
 store.dispatch(getCategorie())
 store.dispatch(getCulte())
+store.dispatch(getDepense())
+store.dispatch(getFinance())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

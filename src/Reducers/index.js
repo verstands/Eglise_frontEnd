@@ -6,6 +6,8 @@ import deparmentReduceur from "./Departement.reducer";
 import nouveauneReducer from "./Nouveau.reducer";
 import culteReducer from "./CulteReducer";
 import categorieReducer from "./CategorieReducer";
+import depenseReducer from "./DepenseReducer";
+import financeReducer from "./FinanceReducer";
 
 export default combineReducers({
     membreReducer,
@@ -15,4 +17,6 @@ export default combineReducers({
     nouveauneReducer,
     culteReducer,
     categorieReducer,
+    depenseReducer,
+    financeReducer
 });
