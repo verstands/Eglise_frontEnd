@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
+import { useDispatch, useSelector } from "react-redux";
+import { addNouveau } from "../../actions/Nouveau.action";
 
 
 const AddNouveau = () => {
+    const dispatch = useDispatch()
+    const form = useRef()
+    
+    const handleSave = async (e) => {
+        e.preventDefault();
+        const data = {
+            nom : form.current[0].value,
+            adresse : form.current[1].value,
+            telephone : form.current[2].value,
+            culte : form.current[3].value,
+            egliseprovenance : form.current[4].value,
+            categorie : form.current[5].value,
+        }
+        dispatch(addNouveau(data))
+        form.current.reset();
+    }
     return (
         <div class="wrapper">
             <NavBar />
@@ -18,29 +36,43 @@ const AddNouveau = () => {
                             </div>
 
                             <div class="card-body">
+                                <form ref={form} onSubmit={handleSave}>
                                 <div className="row">
                                     <div className="col-md-4">
+                                        <label>Nom</label>
                                         <input type="text" class="form-control" placeholder="Nom" /><br />
                                     </div>
                                     <div className="col-md-4">
+                                        <label>Adresse</label>
                                         <input type="text" class="form-control" placeholder="Adresse" />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="text" class="form-control" placeholder="Telephone" />
+                                        <label>Telephone</label>
+                                        <input type="number" class="form-control" placeholder="Telephone" />
                                     </div>
                                     <div className="col-md-4">
-                                        <input type="email" class="form-control" placeholder="Categorie jeune frere" /><br />
+                                        <label>Categorie</label>
+                                        <input type="text" class="form-control" placeholder="Categorie jeune frere" /><br />
+                                    </div>
+                                    <div className="col-md-4">
+                                        <label>Eglise provenance</label>
+                                        <input type="text" class="form-control"  /><br />
+                                    </div>
+                                    <div className="col-md-4">
+                                        <label>Culte</label>
+                                        <input type="text" class="form-control"  /><br />
                                     </div>
                                     <div className="col-md-12">
-                                       <button className="btn btn-primary">Enregistrer</button>
+                                        <button className="btn btn-primary">Enregistrer</button>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </main>
             </div>
         </div>
- )
+    )
 }
 export default AddNouveau;

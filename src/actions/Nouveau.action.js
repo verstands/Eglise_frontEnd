@@ -2,30 +2,29 @@ import axios from "axios";
 import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
-
-export const ADD_DEPATERMENT  = "ADD_MEMBRE_AFFECTER";
-export const GET_DEPARTEMENT = "GET_MEMBRE_AFFECTER"
+export const GET_NOUVEAUNE = "GET_MOUVEMENT";
+export const ADD_NOUVEAUNE = "GET_MOUVEMENT";
 const url = "http://localhost:5000/api/";
 
-export const getDepartement = () => {
+export const getNouveaune = () => {
     return (dispatch) => {
-        return axios.get(`${url}departements`, {
+        return axios.get(`${url}nouveauvenus`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-            dispatch({ type: GET_DEPARTEMENT, payload: response.data.data })
+            dispatch({ type: GET_NOUVEAUNE, payload: response.data.data })
         }).catch((error) => {
             alert(error)
         })
     }
 }
 
-export const addDepartement = (data) => {
+export const addNouveau = (postData) => {
     return (dispatch) => {
-        return axios.post(`${url}departement`,data,
+        return axios.post(`${url}nouveauvenu`, postData,
             {
                 headers: {
                     Accept: 'application/json',
@@ -33,7 +32,7 @@ export const addDepartement = (data) => {
                     Authorization: Token()
                 }
             }).then((response) => {
-                dispatch({ type: ADD_DEPATERMENT, payload: data })
+                dispatch({ type: ADD_NOUVEAUNE, payload: postData })
                 Swal.fire({
                     icon: 'success',
                     text: `${response.data.message}`,
@@ -42,17 +41,10 @@ export const addDepartement = (data) => {
             }).catch((error) => {
 
                 if (error.response && error.response.status === 422) {
-                    if (error.response.data.message.includes('The nom field is required')) {
-                        Swal.fire({
-                            icon: 'error',
-                            text: `${error.response.data.message}`,
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            text: `Tous les champs sont obligatoire !`,
-                        });
-                    }
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
                 } else if (error.response.status === 500) {
                     Swal.fire({
                         icon: 'error',
@@ -69,7 +61,5 @@ export const addDepartement = (data) => {
             })
     }
 }
-
-
 
 
