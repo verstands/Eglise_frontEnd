@@ -15,6 +15,10 @@ import { getCategorie } from './actions/CategorieAction';
 import { getCulte } from './actions/CulteAction';
 import { getDepense } from './actions/DepenseAction';
 import { getFinance } from './actions/FinanceAction';
+import { getDevise } from './actions/DeviseAction';
+import { getOffrande } from './actions/OffrandeAction';
+import { getCaisse } from './actions/CaisseAction';
+import { getTypeDepense } from './actions/TypeDepenseAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -30,6 +34,10 @@ store.dispatch(getCategorie())
 store.dispatch(getCulte())
 store.dispatch(getDepense())
 store.dispatch(getFinance())
+store.dispatch(getDevise())
+store.dispatch(getOffrande())
+store.dispatch(getCaisse())
+store.dispatch(getTypeDepense())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

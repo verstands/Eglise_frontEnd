@@ -2,30 +2,30 @@ import axios from "axios";
 import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
-export const GET_FINANCE = "GET_FINANCE";
-export const ADD_FINANCE = "ADD_FINANCE";
+export const GET_TYPE_DEPENSE = "GET_TYPE_DEPENSE";
+export const ADD_TYPE_DEPENSE = "ADD_TYPE_DEPENSE";
 const url = "http://localhost:5000/api/";
 
 
-export const getFinance = () => {
-    return (dispatch) => {
-        return axios.get(`${url}finances`, {
+export const getTypeDepense = () => {
+    return(dispatch) => {
+        return axios.get(`${url}type_depenses`,{
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-            dispatch({ type: GET_FINANCE, payload: response.data.data })
-        }).catch((error) => {
-            alert(error)
-        })
+                dispatch({type : GET_TYPE_DEPENSE, payload : response.data.data})
+            }).catch((error) => {
+                alert(error)
+            })
     }
 }
 
-export const addFinance = (postData) => {
+export const addTypeDepense = (postData) => {
     return (dispatch) => {
-        return axios.post(`${url}finance`, postData,
+        return axios.post(`${url}type_depense`, postData,
             {
                 headers: {
                     Accept: 'application/json',
@@ -33,7 +33,7 @@ export const addFinance = (postData) => {
                     Authorization: Token()
                 }
             }).then((response) => {
-                dispatch({ type: ADD_FINANCE, payload: postData })
+                dispatch({ type: ADD_TYPE_DEPENSE, payload: postData })
                 Swal.fire({
                     icon: 'success',
                     text: `${response.data.message}`,

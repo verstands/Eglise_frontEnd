@@ -1,30 +1,13 @@
-import React, { useState } from "react";
+import React from 'react'
 import { Link } from "react-router-dom";
 
-const InventaireFinance = () => {
+
+function ConsultationFinance() {
     return (
         <>
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h1 class="text-center">Inventaire de recette</h1>
-                    <hr />
-                </div>
-                <div className="row">
-                    <div className="col-md-3">
-                        <input type="date" class="form-control" placeholder="Date debut"  /><br />
-                    </div>
-                    <div className="col-md-3">
-                        <input type="date" class="form-control" placeholder="Date fin" />
-                    </div>
-                    <div className="col-md-2">
-                        <input type="number" class="form-control" placeholder="Nombre jour" />
-                    </div>
-                    <div className="col-md-3">
-                        <button className="btn btn-primary">Recherche</button>
-                    </div>
-                    <div className="col-md-3">
-                    <button className="btn btn-primary">imprimer</button>
-                </div>
+                    <h5 class="card-title mb-0 text-center">Liste des Recette</h5>
                 </div>
                 <table class="table table-hover my-0">
                     <thead>
@@ -36,6 +19,7 @@ const InventaireFinance = () => {
                             <th>Devise</th>
                             <th>Beneficiaire</th>
                             <th>Caisse</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +31,11 @@ const InventaireFinance = () => {
                             <td>Done</td>
                             <td>Done</td>
                             <td>Done</td>
-                            
+                            <td class="d-none d-md-table-cell">
+                                <button class="badge bg-danger btn"><span class="badge bg-danger">Delete</span></button>&nbsp;
+                                <Link to="/updatemembre" class="badge bg-success btn"><span class="badge bg-success">Update</span></Link>&nbsp;
+                                <Link to="/DepenseFinance" class="badge bg-success btn"><span class="badge bg-success">Adds</span></Link>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -56,4 +44,4 @@ const InventaireFinance = () => {
     )
 }
 
-export default InventaireFinance;
+export default ConsultationFinance

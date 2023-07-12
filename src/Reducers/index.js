@@ -8,6 +8,10 @@ import culteReducer from "./CulteReducer";
 import categorieReducer from "./CategorieReducer";
 import depenseReducer from "./DepenseReducer";
 import financeReducer from "./FinanceReducer";
+import offrandeReducer from "./OffrandeReducer";
+import deviseReducer from "./DeviseReducer";
+import caisseReducer from "./CaisseReducer";
+import TypeDepenseReducer from "./TypeDepenseReducer";
 
 export default combineReducers({
     membreReducer,
@@ -18,5 +22,9 @@ export default combineReducers({
     culteReducer,
     categorieReducer,
     depenseReducer,
-    financeReducer
+    financeReducer,
+    offrandeReducer,
+    deviseReducer,
+    caisseReducer,
+    TypeDepenseReducer,
 });

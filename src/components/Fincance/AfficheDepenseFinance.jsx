@@ -1,41 +1,65 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import DepenseTableau from "../Tableau/DepenseTableau";
 
 const AfficheDepenseFinance = () => {
+    const type_depense = useSelector((state) => state.TypeDepenseReducer)
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
     return (
         <>
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0 text-center">Liste des Recette</h5>
+                    <h1 class="text-center">Liste des depenses</h1>
+                    <hr />
+                    <div className="col-md-6">
+                        <input 
+                            type="text" 
+                            placeholder="Recherche" 
+                            className="form-control" 
+                            value={searchTerm}
+                            onChange={handleSearch}
+                        />
+                    </div>
                 </div>
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
-                            <th>N°</th>
                             <th>Date</th>
-                            <th>Type depense</th>
+                            <th>Caisse</th>
+                            <th>Depense</th>
                             <th>Montant</th>
                             <th>Devise</th>
                             <th>Beneficiaire</th>
-                            <th>Caisse</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Project Apollo</td>
-                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                            <td>Done</td>
-                            <td>Done</td>
-                            <td>Done</td>
-                            <td>Done</td>
-                            <td class="d-none d-md-table-cell">
-                                <button class="badge bg-danger btn"><span class="badge bg-danger">Delete</span></button>&nbsp;
-                                <Link  to="/updatemembre" class="badge bg-success btn"><span class="badge bg-success">Update</span></Link>&nbsp;
-                                <Link to="/DepenseFinance" class="badge bg-success btn"><span class="badge bg-success">Adds</span></Link>
-                            </td>
-                        </tr>
+                    {Array.isArray(type_depense) && type_depense
+                            .filter((data) => {
+                                if (typeof data.created_at !== 'string') {
+                                    return false; // ignore non-string values
+                                }
+                                return data.created_at.toLowerCase().includes(searchTerm.toLowerCase())
+                              
+                            })
+                            .map((data, index) => (
+                                <DepenseTableau
+                                    date={data.created_at}
+                                    caisse={data.caisse}
+                                    depense={data.depense}
+                                    montant={data.montant}
+                                    devise={data.devise}
+                                    beneficiaire={data.beneficiaire}
+                                    key={index}
+                                />
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>
