@@ -7,6 +7,8 @@ import { addNouveau } from "../../actions/Nouveau.action";
 
 const AddNouveau = () => {
     const dispatch = useDispatch()
+    const categorie = useSelector((state) => state.categorieReducer)
+    const culte = useSelector((state) => state.culteReducer)
     const form = useRef()
     
     const handleSave = async (e) => {
@@ -52,7 +54,13 @@ const AddNouveau = () => {
                                     </div>
                                     <div className="col-md-4">
                                         <label>Categorie</label>
-                                        <input type="text" class="form-control" placeholder="Categorie jeune frere" /><br />
+                                        <select className="form-control" >
+                                            {
+                                                Array.isArray(categorie) && categorie.map((cat) => {
+                                                    return <option value={cat.id} key={cat.id}>{cat.nom_categorie}</option>
+                                                })
+                                            }
+                                        </select>
                                     </div>
                                     <div className="col-md-4">
                                         <label>Eglise provenance</label>
@@ -60,7 +68,13 @@ const AddNouveau = () => {
                                     </div>
                                     <div className="col-md-4">
                                         <label>Culte</label>
-                                        <input type="text" class="form-control"  /><br />
+                                        <select className="form-control" name="" id="">
+                                            {
+                                                Array.isArray(culte) && culte.map((clt) => {
+                                                    return <option value={clt.id} key={clt.id}>{clt.nom_culte}</option>
+                                                })
+                                            }
+                                        </select>
                                     </div>
                                     <div className="col-md-12">
                                         <button className="btn btn-primary">Enregistrer</button>

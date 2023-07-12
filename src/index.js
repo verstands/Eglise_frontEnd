@@ -11,6 +11,8 @@ import { getMembreEnfant } from './actions/Enfant.action';
 import { getMouvement } from './actions/Mouvement.action';
 import { getDepartement } from './actions/Departemant.action';
 import { getNouveaune } from './actions/Nouveau.action';
+import { getCategorie } from './actions/CategorieAction';
+import { getCulte } from './actions/CulteAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -22,6 +24,8 @@ store.dispatch(getMembreEnfant())
 store.dispatch(getMouvement())
 store.dispatch(getDepartement())
 store.dispatch(getNouveaune())
+store.dispatch(getCategorie())
+store.dispatch(getCulte())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
