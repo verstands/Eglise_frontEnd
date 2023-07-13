@@ -16,7 +16,7 @@ export const getMembreEnfant = () => {
         }).then((response) => {
                 dispatch({type : GET_MEMBRE_ENFANT, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+              
             })
     }
 }

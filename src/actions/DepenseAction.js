@@ -16,7 +16,7 @@ export const getDepense = () => {
         }).then((response) => {
                 dispatch({type : GET_DEPENSE, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+                
             })
     }
 }

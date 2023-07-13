@@ -16,7 +16,7 @@ export const getDevise = () => {
         }).then((response) => {
                 dispatch({type : GET_DEVISE, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+              
             })
     }
 }

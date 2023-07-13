@@ -27,7 +27,7 @@ const MembreAffiche = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    { Array.isArray(membres) && membres.map((data, index) => <TableauMembre nom={data.nom} postnom={data.postnom} prenom={data.prenom} email={data.email} telephone={data.telephone} key={index}/>)}
+                    { Array.isArray(membres) && membres.map((data, index) => <TableauMembre id={data.id} nom={data.nom} postnom={data.postnom} prenom={data.prenom} email={data.email} telephone={data.telephone} key={index}/>)}
                     </tbody>
                 </table>
             </div>

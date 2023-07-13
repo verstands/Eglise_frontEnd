@@ -17,7 +17,7 @@ export const getNouveaune = () => {
         }).then((response) => {
             dispatch({ type: GET_NOUVEAUNE, payload: response.data.data })
         }).catch((error) => {
-            alert(error)
+            
         })
     }
 }

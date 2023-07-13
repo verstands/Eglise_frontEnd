@@ -19,6 +19,8 @@ import { getDevise } from './actions/DeviseAction';
 import { getOffrande } from './actions/OffrandeAction';
 import { getCaisse } from './actions/CaisseAction';
 import { getTypeDepense } from './actions/TypeDepenseAction';
+import { getCommunication } from './actions/CommunicationAction';
+import { getMateriel } from './actions/MaterielAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -38,6 +40,8 @@ store.dispatch(getDevise())
 store.dispatch(getOffrande())
 store.dispatch(getCaisse())
 store.dispatch(getTypeDepense())
+store.dispatch(getCommunication())
+store.dispatch(getMateriel())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

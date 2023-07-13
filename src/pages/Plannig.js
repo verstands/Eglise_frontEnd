@@ -22,15 +22,28 @@ const Plannig = () => {
                                                 href="#home"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Programme</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-calendar"></i> Programme</span></a
+                                            >
+                                        </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                data-bs-toggle="tab"
+                                                href="#addsxx"
+                                                role="tab"
+                                            ><span class="hidden-sm-up"></span>
+                                                <span class="hidden-xs-down"><i class="fas fa-add"></i> Ajouter un plannig</span></a
                                             >
                                         </li>
                                     </ul>
                                     <div class="tab-content tabcontent-border">
                                         <div class="tab-pane active" id="home" role="tabpanel">
                                             <div class="p-20">
-                                                <AffichePlannig />
+                                            <AffichePlannig />
                                             </div>
+                                        </div>
+                                        <div class="tab-pane p-20" id="addsxx" role="tabpanel">
+                                            
                                         </div>
                                     </div>
                                 </div>

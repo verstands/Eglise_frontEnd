@@ -16,7 +16,7 @@ export const getCulte = () => {
         }).then((response) => {
                 dispatch({type : GET_CULTE, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+               
             })
     }
 }

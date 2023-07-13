@@ -18,7 +18,7 @@ export const getFinance = () => {
         }).then((response) => {
             dispatch({ type: GET_FINANCE, payload: response.data.data })
         }).catch((error) => {
-            alert(error)
+            
         })
     }
 }

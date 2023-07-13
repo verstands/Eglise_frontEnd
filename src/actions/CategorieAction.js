@@ -16,7 +16,7 @@ export const getCategorie = () => {
         }).then((response) => {
                 dispatch({type : GET_CATEGORIE, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+                
             })
     }
 }

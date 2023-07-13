@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { deleteMembre } from '../../actions/membre.action';
 
-const TableauMembre = ({ nom, postnom, prenom, email, telephone }) => {
-
+const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
     return (
         <>
             <tr>
@@ -12,7 +12,7 @@ const TableauMembre = ({ nom, postnom, prenom, email, telephone }) => {
                 <td className="d-none d-md-table-cell">{email}</td>
                 <td className="d-none d-md-table-cell">{telephone}</td>
                 <td className="d-none d-md-table-cell">
-                    <button className="badge bg-danger btn"><span className="badge bg-danger">Delete</span></button>&nbsp;
+                    <button className="badge bg-danger btn"><span className="badge bg-danger" onClick={() => deleteMembre(id)}>Delete</span></button>&nbsp;
                     <Link to="/updatemembre" className="badge bg-success btn"><span className="badge bg-success">Update</span></Link>&nbsp;
                     <Link to="/detailmembre" className="badge bg-success btn"><span className="badge bg-success">Detail</span></Link>&nbsp;
                 </td>

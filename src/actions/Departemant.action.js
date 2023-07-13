@@ -18,7 +18,7 @@ export const getDepartement = () => {
         }).then((response) => {
             dispatch({ type: GET_DEPARTEMENT, payload: response.data.data })
         }).catch((error) => {
-            alert(error)
+            
         })
     }
 }

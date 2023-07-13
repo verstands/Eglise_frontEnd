@@ -2,30 +2,30 @@ import axios from "axios";
 import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
-export const GET_TYPE_DEPENSE = "GET_TYPE_DEPENSE";
-export const ADD_TYPE_DEPENSE = "ADD_TYPE_DEPENSE";
+export const GET_COMMUNICATION = "GET_COMMUNICATION";
+export const ADD_COMMUNICATION = "GET_COMMUNICATION";
 const url = "http://localhost:5000/api/";
 
 
-export const getTypeDepense = () => {
+export const getCommunication = () => {
     return(dispatch) => {
-        return axios.get(`${url}type_depenses`,{
+        return axios.get(`${url}communications`,{
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-                dispatch({type : GET_TYPE_DEPENSE, payload : response.data.data})
+                dispatch({type : GET_COMMUNICATION, payload : response.data.data})
             }).catch((error) => {
-                
+               
             })
     }
 }
 
-export const addTypeDepense = (postData) => {
+export const addCommunication = (data) => {
     return (dispatch) => {
-        return axios.post(`${url}type_depense`, postData,
+        return axios.post(`${url}communication`,data,
             {
                 headers: {
                     Accept: 'application/json',
@@ -33,7 +33,7 @@ export const addTypeDepense = (postData) => {
                     Authorization: Token()
                 }
             }).then((response) => {
-                dispatch({ type: ADD_TYPE_DEPENSE, payload: postData })
+                dispatch({ type: ADD_COMMUNICATION, payload: data })
                 Swal.fire({
                     icon: 'success',
                     text: `${response.data.message}`,
@@ -42,10 +42,12 @@ export const addTypeDepense = (postData) => {
             }).catch((error) => {
 
                 if (error.response && error.response.status === 422) {
-                    Swal.fire({
-                        icon: 'error',
-                        text: `${JSON.stringify(postData)}`,
-                    });
+                    
+                        Swal.fire({
+                            icon: 'error',
+                            text: `${error.response.data.message}`,
+                        });
+                    
                 } else if (error.response.status === 500) {
                     Swal.fire({
                         icon: 'error',

@@ -16,7 +16,7 @@ export const getOffrande = () => {
         }).then((response) => {
                 dispatch({type : GET_OFFRANDE, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+                
             })
     }
 }

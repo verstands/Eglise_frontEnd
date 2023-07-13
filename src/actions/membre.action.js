@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 export const GET_MEMBRE = "GET_MEMBRE";
 export const ADD_MEMBRE = "ADD_MEMBRE";
+export const DELETE_MEMBRE = "DELETE_MEMBRE";
 const url = "http://localhost:5000/api/";
 
 
@@ -18,7 +19,7 @@ export const getMembre = () => {
         }).then((response) => {
             dispatch({ type: GET_MEMBRE, payload: response.data.data })
         }).catch((error) => {
-            alert(error)
+            
         })
     }
 }
@@ -67,6 +68,28 @@ export const addMembre = (postData) => {
                     })
                 }
             })
+    }
+}
+
+
+export const deleteMembre = (id) => {
+    return (dispatch) => {
+        return axios.delete(`${url}membre/${id}`, {
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: Token()
+            }
+        }).then((response) => {
+            dispatch({ type: DELETE_MEMBRE, payload: response.data.data })
+            Swal.fire({
+                icon: 'success',
+                text: `${response.data.message}`,
+                confirmButtonText: 'OK'
+            })
+        }).catch((error) => {
+            alert(error)
+        })
     }
 }
 

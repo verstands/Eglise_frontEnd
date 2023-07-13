@@ -16,7 +16,7 @@ export const getMouvement = () => {
         }).then((response) => {
                 dispatch({type : GET_MOUVEMENT, payload : response.data.data})
             }).catch((error) => {
-                alert(error)
+                
             })
     }
 }

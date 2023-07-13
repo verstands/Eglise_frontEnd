@@ -16,7 +16,7 @@ export const getCaisse = () => {
         }).then((response) => {
                 dispatch({type : GET_CAISSE, payload : response.data.data})
             }).catch((error) => {
-                alert(error + 'caise')
+                
             })
     }
 }

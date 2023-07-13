@@ -17,6 +17,8 @@ import Erreur from '../components/Erreur';
 import DepenseFinance from '../components/Fincance/DepenseFinance';
 import Paie from '../pages/Paie';
 import Plannig from '../pages/Plannig';
+import Communication from '../pages/Communication';
+import Materiel from '../pages/Materiel';
 
 class IndexRoute extends Component {
     render(){
@@ -37,6 +39,8 @@ class IndexRoute extends Component {
                 <Route path="/DepenseFinance"  element={<DepenseFinance />} />
                 <Route path="/Paie"  element={<Paie />} />
                 <Route path="/Planning"  element={<Plannig />} />
+                <Route path="/Communication"  element={<Communication />} />
+                <Route path="/materiel"  element={<Materiel />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );

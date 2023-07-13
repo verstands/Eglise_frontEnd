@@ -1,18 +1,18 @@
-import React from "react";
-import NavBar from "../components/NavBar";
-import NavOt from "../components/NavOt";
-import AffichePlannig from "../components/Plannig/AffichePlannig";
-import AfficheCommunication from "../components/Communication/AfficheCommunication";
-import AddCommunication from "../components/Communication/AddCommunication";
-const Communication = () => {
-    return (
-        <div class="wrapper">
+import React from 'react'
+import NavBar from '../components/NavBar';
+import NavOt from '../components/NavOt';
+import MaterielMateriel from '../components/Materiel/materielMateriel';
+import AddMateriel from '../components/Materiel/AddMateriel';
+
+const Materiel = () => {
+  return (
+    <div class="wrapper">
             <NavBar />
             <div class="main">
                 <NavOt />
                 <main className="content">
                     <div className="container-fluid p-0">
-                        <h1 className="h3 mb-3"><strong>Gestion Communication</strong> </h1>
+                        <h1 className="h3 mb-3"><strong>Gestion Materiels</strong> </h1>
                         <div class="page-wrapper">
                             <div class="row">
                                 <div class="card">
@@ -24,7 +24,7 @@ const Communication = () => {
                                                 href="#home"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Communication</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Materiels</span></a
                                             >
                                         </li>
                                         <li class="nav-item">
@@ -34,18 +34,18 @@ const Communication = () => {
                                                 href="#adds"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Liste de communication</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-add"></i> Ajouter un materiel</span></a
                                             >
                                         </li>
                                     </ul>
                                     <div class="tab-content tabcontent-border">
                                         <div class="tab-pane active" id="home" role="tabpanel">
                                             <div class="p-20">
-                                                <AfficheCommunication />
+                                                <MaterielMateriel />
                                             </div>
                                         </div>
                                         <div class="tab-pane p-20" id="adds" role="tabpanel">
-                                            <AddCommunication />
+                                            <AddMateriel />
                                         </div>
                                         <div class="tab-pane p-20" id="conge" role="tabpanel">
                                             
@@ -65,7 +65,7 @@ const Communication = () => {
                 </main>
             </div>
         </div>
-    )
+  )
 }
 
-export default Communication;
+export default Materiel

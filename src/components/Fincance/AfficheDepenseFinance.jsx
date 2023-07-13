@@ -17,6 +17,9 @@ const AfficheDepenseFinance = () => {
                 <div class="card-header">
                     <h1 class="text-center">Liste des depenses</h1>
                     <hr />
+                    <Link to="/DepenseFinance" class="btn-success btn"><span class="">Ajouter une depense</span></Link>
+                    <br />
+                    <br />
                     <div className="col-md-6">
                         <input 
                             type="text" 

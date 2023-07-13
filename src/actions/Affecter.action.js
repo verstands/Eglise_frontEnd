@@ -18,7 +18,7 @@ export const getMembreAffecter = () => {
         }).then((response) => {
             dispatch({ type: GET_AFFECTER, payload: response.data.data })
         }).catch((error) => {
-            alert(error)
+            
         })
     }
 }

@@ -2,30 +2,30 @@ import axios from "axios";
 import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
-export const GET_TYPE_DEPENSE = "GET_TYPE_DEPENSE";
-export const ADD_TYPE_DEPENSE = "ADD_TYPE_DEPENSE";
+export const GET_MATERIEL = "GET_MATERIEL";
+export const ADD_MATERIEL = "ADD_MATERIEL";
 const url = "http://localhost:5000/api/";
 
 
-export const getTypeDepense = () => {
-    return(dispatch) => {
-        return axios.get(`${url}type_depenses`,{
+export const getMateriel = () => {
+    return (dispatch) => {
+        return axios.get(`${url}materiels`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-                dispatch({type : GET_TYPE_DEPENSE, payload : response.data.data})
-            }).catch((error) => {
-                
-            })
+            dispatch({ type: GET_MATERIEL, payload: response.data.data })
+        }).catch((error) => {
+            
+        })
     }
 }
 
-export const addTypeDepense = (postData) => {
+export const addMateriel = (postData) => {
     return (dispatch) => {
-        return axios.post(`${url}type_depense`, postData,
+        return axios.post(`${url}materiel`, postData,
             {
                 headers: {
                     Accept: 'application/json',
@@ -33,7 +33,7 @@ export const addTypeDepense = (postData) => {
                     Authorization: Token()
                 }
             }).then((response) => {
-                dispatch({ type: ADD_TYPE_DEPENSE, payload: postData })
+                dispatch({ type: ADD_MATERIEL, payload: postData })
                 Swal.fire({
                     icon: 'success',
                     text: `${response.data.message}`,

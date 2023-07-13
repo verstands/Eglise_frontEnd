@@ -14,7 +14,6 @@ function DepenseTableau({date, caisse, depense, montant, devise, beneficiaire })
             <td class="d-none d-md-table-cell">
                 <button class="badge bg-danger btn"><span class="badge bg-danger">Delete</span></button>&nbsp;
                 <Link to="/updatemembre" class="badge bg-success btn"><span class="badge bg-success">Update</span></Link>&nbsp;
-                <Link to="/DepenseFinance" class="badge bg-success btn"><span class="badge bg-success">Adds</span></Link>
             </td>
         </tr>
     )

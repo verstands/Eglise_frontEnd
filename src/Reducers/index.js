@@ -12,6 +12,8 @@ import offrandeReducer from "./OffrandeReducer";
 import deviseReducer from "./DeviseReducer";
 import caisseReducer from "./CaisseReducer";
 import TypeDepenseReducer from "./TypeDepenseReducer";
+import communicationReducer from "./CommunicationReducer";
+import materielReducer from "./MaterielReducer";
 
 export default combineReducers({
     membreReducer,
@@ -27,4 +29,6 @@ export default combineReducers({
     deviseReducer,
     caisseReducer,
     TypeDepenseReducer,
+    communicationReducer,
+    materielReducer,
 });
