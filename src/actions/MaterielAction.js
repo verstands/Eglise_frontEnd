@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 export const GET_MATERIEL = "GET_MATERIEL";
 export const ADD_MATERIEL = "ADD_MATERIEL";
+export const DELETE_MATERIEL = "DELETE_MATERIEL";
 const url = "http://localhost:5000/api/";
 
 

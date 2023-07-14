@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import TableauEnfant from "../Tableau/EnfantTableau";
+import { Link } from "react-router-dom";
 
 const MembreEnfantAffiche = () => {
     const membreEnfants = useSelector((state) => state.enfantReducer);
@@ -9,6 +10,10 @@ const MembreEnfantAffiche = () => {
             <div class="card flex-fill">
                 <div class="card-header">
                     <h5 class="card-title mb-0 text-center">Liste des membres enfants</h5>
+                </div>
+                <div className="col-md-4">
+                    <Link to="/addmembreEnfant" class=" btn-success btn"><span class="btn btn-success">Ajouter un enfant membre</span></Link>
+
                 </div>
                 <table class="table table-hover my-0">
                     <thead>
@@ -30,7 +35,7 @@ const MembreEnfantAffiche = () => {
                                     key={indexEnfant}
                                 />
                             ))
-                       }
+                        }
                     </tbody>
                 </table>
             </div>
