@@ -48,6 +48,7 @@ const MaterielMateriel = () => {
                             })
                             .map((data, index) => (
                                 <MaterielTableau
+                                    id={data.id}
                                     materiel={data.materiel}
                                     categorie_id={data.categorie_id}
                                     stock={data.stock}
