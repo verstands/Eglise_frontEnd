@@ -54,6 +54,7 @@ const AfficheDepenseFinance = () => {
                             .map((data, index) => (
                                 <DepenseTableau
                                     date={data.created_at}
+                                    id={data.id}
                                     caisse={data.caisse}
                                     depense={data.depense}
                                     montant={data.montant}
