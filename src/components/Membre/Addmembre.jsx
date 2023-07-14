@@ -37,19 +37,18 @@ const Addmembre = () => {
                 <NavOt />
                 <main className="content">
                     <div className="container-fluid p-0">
-                        <h1 className="h3 mb-3"><strong>Ajouter un membre</strong> </h1>
+                        <h1 className="h3 mb-3"><strong><i className="fa fa-user-circle" style={{fontSize : "30px"}}></i> Ajouter un membre</strong> </h1>
                         <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0">Ajouter un membre</h5>
-                            </div>
 
                             <div class="card-body">
                                 <form ref={form} onSubmit={(e) => handleSave(e)}>
                                     <div className="row">
                                         <div className="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Nom" /><br />
+                                            <label htmlFor="">Nom</label>
+                                            <input type="text" class="form-control"/><br />
                                         </div>
                                         <div className="col-md-4">
+                                            <label htmlFor="">Prenom</label>
                                             <input type="text" class="form-control" placeholder="Postnom" />
                                         </div>
                                         <div className="col-md-4">

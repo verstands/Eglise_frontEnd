@@ -8,15 +8,22 @@ const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
     return (
         <>
             <tr>
+                <td><i className="fa fa-user-circle" style={{fontSize :'30px'}}></i></td>
                 <td className="d-none d-xl-table-cell">{nom}</td>
                 <td className="d-none d-xl-table-cell">{postnom}</td>
                 <td className="d-none d-xl-table-cell">{prenom}</td>
                 <td className="d-none d-md-table-cell">{email}</td>
                 <td className="d-none d-md-table-cell">{telephone}</td>
                 <td className="d-none d-md-table-cell">
-                    <button className="badge bg-danger btn"><span className="badge bg-danger" onClick={() => dispatch(deleteMembre(id))}>Delete</span></button>&nbsp;
-                    <Link to="/updatemembre" className="badge bg-success btn"><span className="badge bg-success">Update</span></Link>&nbsp;
-                    <Link to="/detailmembre" className="badge bg-success btn"><span className="badge bg-success">Detail</span></Link>&nbsp;
+                    <button className="btn-lg bg-danger btn" onClick={() => dispatch(deleteMembre(id))}>
+                        <i className="fa fa-trash" style={{color: 'white'}}></i>
+                    </button>&nbsp;
+                    <Link to="/updatemembre" title='Modifier' className="btn-lg bg-success btn">
+                        <i className="fa fa-edit" style={{color: 'white'}}></i>
+                    </Link>&nbsp;
+                    <Link to="/detailmembre" title='Detail' className="btn-lg bg-success btn">
+                        <i className="fa-solid fa-info" style={{color: 'white'}}></i>
+                    </Link>&nbsp;
                 </td>
             </tr>
         </>
