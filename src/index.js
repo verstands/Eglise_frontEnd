@@ -9,7 +9,7 @@ import rootReducer from './Reducers';
 import { getMembre } from './actions/membre.action';
 import { getMembreEnfant } from './actions/Enfant.action';
 import { getMouvement } from './actions/Mouvement.action';
-import { getDepartement } from './actions/Departemant.action';
+import { getDepartement, getDepartementActivite } from './actions/Departemant.action';
 import { getNouveaune } from './actions/Nouveau.action';
 import { getCategorie } from './actions/CategorieAction';
 import { getCulte } from './actions/CulteAction';
@@ -42,6 +42,7 @@ store.dispatch(getCaisse())
 store.dispatch(getTypeDepense())
 store.dispatch(getCommunication())
 store.dispatch(getMateriel())
+store.dispatch(getDepartementActivite())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

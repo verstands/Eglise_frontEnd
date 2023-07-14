@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 export const ADD_DEPATERMENT = "ADD_MEMBRE_AFFECTER";
 export const GET_DEPARTEMENT = "GET_MEMBRE_AFFECTER";
+export const GET_DEPARTEMENT_ACTIVITE = "GET_DEPARTEMENT_ACTIVITE";
 export const DELETE_DEPARTEMENT = "DELETE_DEPARTEMENT";
 const url = "http://localhost:5000/api/";
 
@@ -105,16 +106,16 @@ export const deleteDepartement = (id) => {
     };
 };
 
-export const getDepartementActivite = () => {
+export const getDepartementActivite = (id) => {
     return (dispatch) => {
-        return axios.get(`${url}departements`, {
+        return axios.get(`${url}departementActivite/${id}`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-            dispatch({ type: GET_DEPARTEMENT, payload: response.data.data })
+            dispatch({ type: GET_DEPARTEMENT_ACTIVITE, payload: response.data.data })
         }).catch((error) => {
 
         })

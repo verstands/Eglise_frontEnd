@@ -3,6 +3,7 @@ import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useDispatch, useSelector } from "react-redux";
 import { addMembre, getMembre } from "../../actions/membre.action";
+import { getDepartementActivite } from "../../actions/Departemant.action";
 
 
 const Addmembre = () => {
@@ -10,6 +11,9 @@ const Addmembre = () => {
     const departement = useSelector((state) => state.deparmentReduceur);
     const dispatch = useDispatch();
 
+    const hnadleActivite = (event) => {
+        getDepartementActivite(event.target.value);
+    }
     const handleSave = async (e) => {
         e.preventDefault();
 
@@ -90,9 +94,9 @@ const Addmembre = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Daprtement</label>
-                                            <select name="" className="form-control" id="">
+                                            <select name="" className="form-control" id="" onChange={hnadleActivite} >
                                                 {
-                                                    departement.map((dp) => {
+                                                    Array.isArray(departement) && departement.map((dp) => {
                                                         return(
                                                             <option value={dp.id} key={dp.id}>{dp.nom_depart}</option>
                                                         )
@@ -102,6 +106,7 @@ const Addmembre = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Profetion</label>
+                                            
                                             <input type="text" class="form-control" placeholder="Proffesion" /><br />
                                         </div>
                                         <div className="col-md-4">
