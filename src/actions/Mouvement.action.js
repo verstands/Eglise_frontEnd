@@ -1,5 +1,7 @@
 import axios from "axios";
 import Token from "../loadingErr/Token";
+import Swal from "sweetalert2";
+
 
 export const GET_MOUVEMENT = "GET_MOUVEMENT";
 export const DELETE_MOUVEMENT = "DELETE_MOUVEMENT";

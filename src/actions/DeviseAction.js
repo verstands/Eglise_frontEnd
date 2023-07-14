@@ -1,5 +1,7 @@
 import axios from "axios";
 import Token from "../loadingErr/Token";
+import Swal from "sweetalert2";
+
 
 export const GET_DEVISE = "GET_DEVISE";
 export const DELETE_DEVISE = "DELETE_DEVISE";
