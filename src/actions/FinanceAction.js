@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 export const GET_FINANCE = "GET_FINANCE";
 export const ADD_FINANCE = "ADD_FINANCE";
+export const DELETE_FINANCE = "DELETE_FINANCE";
 const url = "http://localhost:5000/api/";
 
 
@@ -18,7 +19,7 @@ export const getFinance = () => {
         }).then((response) => {
             dispatch({ type: GET_FINANCE, payload: response.data.data })
         }).catch((error) => {
-            
+
         })
     }
 }
@@ -62,3 +63,37 @@ export const addFinance = (postData) => {
             })
     }
 }
+
+export const deleteFinance = (id) => {
+    return (dispatch) => {
+        Swal.fire({
+            title: 'Êtes-vous sûr de vouloir supprimer ce Categorie ?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimer',
+            cancelButtonText: 'Non, annuler'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios
+                    .delete(`${url}finance/${id}`, {
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                            Authorization: Token()
+                        }
+                    })
+                    .then((response) => {
+                        dispatch({ type: DELETE_FINANCE, payload: id });
+                        Swal.fire({
+                            icon: 'success',
+                            text: `${response.data.message}`,
+                            confirmButtonText: 'OK'
+                        });
+                    })
+                    .catch((error) => {
+                        alert(error);
+                    });
+            }
+        });
+    };
+};
