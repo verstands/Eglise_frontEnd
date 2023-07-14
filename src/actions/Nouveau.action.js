@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 export const GET_NOUVEAUNE = "GET_MOUVEMENT";
 export const ADD_NOUVEAUNE = "GET_MOUVEMENT";
+export const DELETE_NOUVEAU = "DELETE_NOUVEAU";
 const url = "http://localhost:5000/api/";
 
 export const getNouveaune = () => {
@@ -17,7 +18,7 @@ export const getNouveaune = () => {
         }).then((response) => {
             dispatch({ type: GET_NOUVEAUNE, payload: response.data.data })
         }).catch((error) => {
-            
+
         })
     }
 }
@@ -62,4 +63,36 @@ export const addNouveau = (postData) => {
     }
 }
 
-
+export const deleteNouveau = (id) => {
+    return (dispatch) => {
+        Swal.fire({
+            title: 'Êtes-vous sûr de vouloir supprimer ce nouveau ne(é) ?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimer',
+            cancelButtonText: 'Non, annuler'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios
+                    .delete(`${url}nouveauvenu/${id}`, {
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                            Authorization: Token()
+                        }
+                    })
+                    .then((response) => {
+                        dispatch({ type: DELETE_NOUVEAU, payload: id });
+                        Swal.fire({
+                            icon: 'success',
+                            text: `${response.data.message}`,
+                            confirmButtonText: 'OK'
+                        });
+                    })
+                    .catch((error) => {
+                        alert(error);
+                    });
+            }
+        });
+    };
+};
