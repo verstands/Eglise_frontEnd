@@ -9,8 +9,9 @@ const MembreEnfantAffiche = () => {
         <>
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0 text-center">Liste des membres enfants</h5>
+                    <h1 class=" text-center">Liste des membres enfants</h1>
                 </div>
+                <hr />
                 <div className="col-md-4">
                     <Link to="/addmembreEnfant" class=" btn-success btn"><span class="btn btn-success">Ajouter un enfant membre</span></Link>
 
@@ -30,8 +31,10 @@ const MembreEnfantAffiche = () => {
                             Array.isArray(membreEnfants) && membreEnfants.map((dataEnfant, indexEnfant) => (
                                 <TableauEnfant
                                     nom={dataEnfant.nom}
+                                    id={dataEnfant.id}
                                     sexe={dataEnfant.sexe}
                                     famille={dataEnfant.famille}
+                                    datenaisse={dataEnfant.datenaisse}
                                     key={indexEnfant}
                                 />
                             ))
