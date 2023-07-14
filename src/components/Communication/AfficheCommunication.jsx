@@ -55,6 +55,7 @@ const AfficheCommunication = () => {
                                 <TableauCommunication
                                     Departement={data.Departement}
                                     obejet={data.obejet}
+                                    id={data.id}
                                     text={data.text}
                                     key={index}
                                 />
