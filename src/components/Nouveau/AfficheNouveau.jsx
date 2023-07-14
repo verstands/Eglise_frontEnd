@@ -28,7 +28,7 @@ const AfficheNouveau = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        { Array.isArray(nouveaune) && nouveaune.map((data, index) => <NouveauneTableau nom={data.nom} adresse={data.adresse} telephone={data.telephone} culte={data.culte} egliseprovenance={data.egliseprovenance} categorie={data.categorie} key={index}/>)}
+                        { Array.isArray(nouveaune) && nouveaune.map((data, index) => <NouveauneTableau nom={data.nom} adresse={data.adresse} telephone={data.telephone} id={data.id} culte={data.culte} egliseprovenance={data.egliseprovenance} categorie={data.categorie} key={index}/>)}
                     </tbody>
                 </table>
             </div>

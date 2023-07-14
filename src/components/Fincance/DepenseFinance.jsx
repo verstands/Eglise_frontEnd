@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTypeDepense } from "../../actions/TypeDepenseAction";
 
 
-const DepenseFinance = () => {
+const   DepenseFinance = () => {
     const caisse = useSelector((state) => state.caisseReducer);
     const depense = useSelector((state) => state.depenseReducer);
     const devise = useSelector((state) => state.deviseReducer);

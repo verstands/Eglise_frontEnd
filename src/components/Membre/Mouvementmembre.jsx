@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import MouvementTableau from "../Tableau/MouvementTableau";
 
 const Mouvementmembre = () => {
-    const mouvement = useSelector((state) => state.mouvement);
+    const mouvement = useSelector((state) => state.mouvementReducer);
     return (
         <>
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0 text-center">Liste des mouvements</h5>
+                    <h1 class=" text-center">Liste des mouvements</h1>
                 </div>
+                <hr />
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
@@ -24,6 +25,7 @@ const Mouvementmembre = () => {
                         Array.isArray(mouvement) && mouvement.map((dataEnfant, indexEnfant) => (
                             <MouvementTableau
                                 membre={dataEnfant.membre}
+                                id={dataEnfant.id}
                                 mission={dataEnfant.mission}
                                 key={indexEnfant}
                             />
