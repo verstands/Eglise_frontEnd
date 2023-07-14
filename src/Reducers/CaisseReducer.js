@@ -7,7 +7,7 @@ export default function caisseReducer(state = initiatState, action) {
       case GET_CAISSE:
          return action.payload
       case DELETE_CAISSE:
-         return state.filter((post) => poste.id != action.payload);
+         return state.filter((post) => post.id != action.payload);
       default:
          return state
    }
