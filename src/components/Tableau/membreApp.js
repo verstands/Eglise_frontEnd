@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { deleteMembre } from '../../actions/membre.action';
+import { useDispatch } from 'react-redux';
 
 const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
+    const dispatch = useDispatch();
     return (
         <>
             <tr>
@@ -12,7 +14,7 @@ const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
                 <td className="d-none d-md-table-cell">{email}</td>
                 <td className="d-none d-md-table-cell">{telephone}</td>
                 <td className="d-none d-md-table-cell">
-                    <button className="badge bg-danger btn"><span className="badge bg-danger" onClick={() => deleteMembre(id)}>Delete</span></button>&nbsp;
+                    <button className="badge bg-danger btn"><span className="badge bg-danger" onClick={() => dispatch(deleteMembre(id))}>Delete</span></button>&nbsp;
                     <Link to="/updatemembre" className="badge bg-success btn"><span className="badge bg-success">Update</span></Link>&nbsp;
                     <Link to="/detailmembre" className="badge bg-success btn"><span className="badge bg-success">Detail</span></Link>&nbsp;
                 </td>

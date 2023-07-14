@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useDispatch, useSelector } from "react-redux";
-import { addMembre } from "../../actions/membre.action";
+import { addMembre, getMembre } from "../../actions/membre.action";
 
 
 const Addmembre = () => {
@@ -26,8 +26,8 @@ const Addmembre = () => {
             activite : form.current[10].value,
             password : form.current[11].value,
         }
-        dispatch(addMembre(postData));
-  
+        await dispatch(addMembre(postData));
+        dispatch(getMembre())
         form.current.reset();
     }
     return (

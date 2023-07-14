@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addMateriel } from '../../actions/MaterielAction';
+import { addMateriel, getMateriel } from '../../actions/MaterielAction';
 
 const AddMateriel = () => {
     const form = useRef();
@@ -8,8 +8,8 @@ const AddMateriel = () => {
     const departement = useSelector((state) => state.deparmentReduceur);
     const dispatch = useDispatch();
 
-    const handleSave = (e) => {
-        e.preventDefault()
+    const handleSave = async (e) => {
+        e.preventDefault();
         const data = {
             'materiel' : form.current[0].value,
             'categorie_id' : form.current[1].value,
@@ -17,10 +17,12 @@ const AddMateriel = () => {
             'cout' : form.current[3].value,
             'devide_id' : form.current[4].value,
             'id_departement' : form.current[5].value,
-        }
+        };
 
-        dispatch(addMateriel(data))
-    }
+       await  dispatch(addMateriel(data));
+       dispatch(getMateriel());
+       form.current.reset();
+    };
     return (
         <div class="card flex-fill">
             <div class="card-header">

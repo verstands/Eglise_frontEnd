@@ -3,8 +3,9 @@ import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
 
-export const ADD_MEMBRE_AFFECTER  = "ADD_MEMBRE_AFFECTER";
-export const GET_AFFECTER = "GET_MEMBRE_AFFECTER"
+export const ADD_MEMBRE_AFFECTER = "ADD_MEMBRE_AFFECTER";
+export const GET_AFFECTER = "GET_MEMBRE_AFFECTER";
+export const DELETE_AFFECTER = "DELETE_AFFECTER";
 const url = "http://localhost:5000/api/";
 
 export const getMembreAffecter = () => {
@@ -18,14 +19,14 @@ export const getMembreAffecter = () => {
         }).then((response) => {
             dispatch({ type: GET_AFFECTER, payload: response.data.data })
         }).catch((error) => {
-            
+
         })
     }
 }
 
 export const addMembreAffecter = (data) => {
     return (dispatch) => {
-        return axios.post(`${url}affectation`,data,
+        return axios.post(`${url}affectation`, data,
             {
                 headers: {
                     Accept: 'application/json',
@@ -44,7 +45,7 @@ export const addMembreAffecter = (data) => {
                 if (error.response && error.response.status === 422) {
                     Swal.fire({
                         icon: 'error',
-                        title : `${JSON.stringify(data)}`,
+                        title: `${JSON.stringify(data)}`,
                         text: `Tous les champs sont obligatoire !`,
                     });
                 } else if (error.response.status === 500) {
@@ -63,6 +64,40 @@ export const addMembreAffecter = (data) => {
             })
     }
 }
+
+export const deleteAffecter = (id) => {
+    return (dispatch) => {
+        Swal.fire({
+            title: 'Êtes-vous sûr de vouloir supprimer ce membre ?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, supprimer',
+            cancelButtonText: 'Non, annuler'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios
+                    .delete(`${url}affectation/${id}`, {
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                            Authorization: Token()
+                        }
+                    })
+                    .then((response) => {
+                        dispatch({ type: DELETE_AFFECTER, payload: id });
+                        Swal.fire({
+                            icon: 'success',
+                            text: `${response.data.message}`,
+                            confirmButtonText: 'OK'
+                        });
+                    })
+                    .catch((error) => {
+                        alert(error);
+                    });
+            }
+        });
+    };
+};
 
 
 
