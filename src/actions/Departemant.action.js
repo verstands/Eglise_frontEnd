@@ -105,5 +105,19 @@ export const deleteDepartement = (id) => {
     };
 };
 
+export const getDepartementActivite = () => {
+    return (dispatch) => {
+        return axios.get(`${url}departements`, {
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: Token()
+            }
+        }).then((response) => {
+            dispatch({ type: GET_DEPARTEMENT, payload: response.data.data })
+        }).catch((error) => {
 
+        })
+    }
+}
 
