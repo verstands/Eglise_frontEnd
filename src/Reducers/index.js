@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 import membreReducer from "./Membre.reducer";
 import enfantReducer from "./Enfant.reducer";
-import mouvementReducer from "./Mouvement.reducer";
 import deparmentReduceur from "./Departement.reducer";
 import nouveauneReducer from "./Nouveau.reducer";
 import culteReducer from "./CulteReducer";
@@ -14,6 +13,8 @@ import caisseReducer from "./CaisseReducer";
 import TypeDepenseReducer from "./TypeDepenseReducer";
 import communicationReducer from "./CommunicationReducer";
 import materielReducer from "./MaterielReducer";
+import deparmentActiviteReduceur from "./DepartementActiviteReducer";
+import mouvementReducer from "./Mouvement.reducer";
 
 export default combineReducers({
     membreReducer,
@@ -31,4 +32,5 @@ export default combineReducers({
     TypeDepenseReducer,
     communicationReducer,
     materielReducer,
+    deparmentActiviteReduceur,
 });

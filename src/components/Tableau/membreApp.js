@@ -18,11 +18,14 @@ const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
                     <button className="btn-lg bg-danger btn" onClick={() => dispatch(deleteMembre(id))}>
                         <i className="fa fa-trash" style={{color: 'white'}}></i>
                     </button>&nbsp;
-                    <Link to="/updatemembre" title='Modifier' className="btn-lg bg-success btn">
+                    <Link to={`/updatemembre/${id}`} title='Modifier' className="btn-lg bg-success btn">
                         <i className="fa fa-edit" style={{color: 'white'}}></i>
                     </Link>&nbsp;
-                    <Link to="/detailmembre" title='Detail' className="btn-lg bg-success btn">
+                    <Link to={`/detailmembre/${id}`} title='Detail' className="btn-lg bg-success btn">
                         <i className="fa-solid fa-info" style={{color: 'white'}}></i>
+                    </Link>&nbsp;
+                    <Link to={`/detailmembre/${id}`} title='Detail' className="btn-lg bg-success btn">
+                        <i className="fa-solid fa-carte" style={{color: 'white'}}></i>
                     </Link>&nbsp;
                 </td>
             </tr>

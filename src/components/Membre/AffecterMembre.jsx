@@ -1,48 +1,81 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addMembreAffecter } from "../../actions/Affecter.action";
+import { addMembreAffecter, getMembreAffecter } from "../../actions/Affecter.action";
+import Select from "react-select";
+
 
 const AffecterMembre = () => {
     const form = useRef();
     const dispatch = useDispatch();
-    const [selectCash, setselectCash] = useState("0")
-    const departement = useSelector((state) => state.deparmentReduceur)
+    const [selectCash, setselectCash] = useState("0");
+    const [SelectedDepartement, setSelectedDepartement] = useState("");
+    const [SelectedMembre, setSelectedMembre] = useState("");
+    const departement = useSelector((state) => state.deparmentReduceur);
+    const membre = useSelector((state) => state.membreReducer);
 
-    const handleChangeRadio = (e) => {
+    const handleChangeRadio = async (e) => {
         setselectCash(e.target.value);
     }
     const handleSave = async (e) => {
         e.preventDefault();
         const data = {
-            nom_membre : form.current[0].value,
-            departement_id : form.current[1].value,
-            state : selectCash
+            nom_membre: SelectedMembre,
+            departement_id: SelectedDepartement,
+            state: selectCash
         }
         dispatch(addMembreAffecter(data))
         form.current.reset();
+    }
+
+    const handleChange = (selectedOption) => {
+        setSelectedDepartement(selectedOption.value);
+    }
+
+    const handleChangeMembre = (selectedOption) => {
+        setSelectedMembre(selectedOption.value);
+    }
+    const handleDepartement = () => {
+        const departements = Array.isArray(departement) && departement.map((vh) => ({
+            label: vh.nom_depart,
+            value: vh.id,
+        }));
+        return (
+            <Select
+                options={departements}
+                onChange={handleChange}
+            />
+        );
+    }
+
+    const handleMembre = () => {
+        const membres = Array.isArray(membre) && membre.map((vh) => ({
+            label: vh.nom + " " + vh.prenom,
+            value: vh.id,
+        }));
+        return (
+            <Select
+                options={membres}
+                onChange={handleChangeMembre}
+            />
+        );
     }
     return (
         <>
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0 text-center">Affecter un membre de departement</h5>
+                    <h1 class="text-center">Affecter un membre de departement</h1>
                 </div>
+                <hr />
                 <form ref={form} onSubmit={(e) => handleSave(e)}>
                     <div className="row">
                         <div className="col-md-6">
-                            <label>Nom mebre</label>
-                            <input type="text" class="form-control" /><br />
+                            <label>Nom membre</label>
+                            {handleMembre()}
                         </div>
                         <div className="col-md-6">
                             <label>Departement</label>
-                            <select className="form-control">
-                                {
-                                    Array.isArray(departement) && departement.map((dp) => {
-                                        return <option key={dp.id} value={dp.id}>{dp.nom_depart}</option>
-                                    })
-                                }
-                            </select>
+                            {handleDepartement()}
                         </div>
                         <div className="col-md-4">
                             <input name="v" type="radio" onChange={handleChangeRadio} checked={selectCash === "1"} value="1" placeholder="Departement" />Cochet tout
@@ -54,6 +87,7 @@ const AffecterMembre = () => {
                         </div>
                     </div>
                 </form>
+                
             </div>
         </>
     )

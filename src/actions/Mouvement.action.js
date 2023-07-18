@@ -3,12 +3,12 @@ import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
 
-export const GET_MOUVEMENT = "GET_MOUVEMENT";
+export const GET_MOUVEMENTS = "GET_MOUVEMENTS";
 export const DELETE_MOUVEMENT = "DELETE_MOUVEMENT";
 const url = "http://localhost:5000/api/";
 
 
-export const getMouvement = () => {
+export const getMouvements = () => {
     return(dispatch) => {
         return axios.get(`${url}mouvements`,{
             headers: {
@@ -17,7 +17,7 @@ export const getMouvement = () => {
                 Authorization: Token()
             }
         }).then((response) => {
-                dispatch({type : GET_MOUVEMENT, payload : response.data.data})
+                dispatch({type : GET_MOUVEMENTS, payload : response.data.data})
             }).catch((error) => {
                 
             })

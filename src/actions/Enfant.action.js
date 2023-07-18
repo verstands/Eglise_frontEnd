@@ -57,3 +57,20 @@ export const deleteEnfant = (id) => {
         });
     };
 };
+
+export const getMembreEnfantId = (id) => {
+
+    return axios.get(`${url}membreenfant/${id}`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: Token()
+        }
+    }).then((response) => {
+        return response.data.data;
+    }).catch((error) => {
+
+    })
+
+}
+

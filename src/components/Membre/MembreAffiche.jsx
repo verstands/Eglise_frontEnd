@@ -19,7 +19,8 @@ const MembreAffiche = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        &nbsp;&nbsp;<Link to="/addmembre" className="btn btn-success btn-lg "><span className="badge bg-success"><i className="fa fa-add"></i> Ajouter un membre</span></Link>
+                        &nbsp;&nbsp;<Link to="/addmembre" className="btn btn-success btn-lg "><span ><i className="fa fa-add"></i></span></Link>
+                        &nbsp;&nbsp;<Link to="/addmembre" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
                     </div>
                     <div className="col-md-5">
                         <input

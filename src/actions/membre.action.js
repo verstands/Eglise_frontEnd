@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 export const GET_MEMBRE = "GET_MEMBRE";
 export const ADD_MEMBRE = "ADD_MEMBRE";
 export const DELETE_MEMBRE = "DELETE_MEMBRE";
+export const GET_MEMBRE_ID = "GET_MEMBRE_ID";
+
 const url = "http://localhost:5000/api/";
 
 
@@ -98,5 +100,21 @@ export const deleteMembre = (id) => {
         });
     };
 };
+
+export const getMembreId = (id) => {
+
+    return axios.get(`${url}membre/${id}`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: Token()
+        }
+    }).then((response) => {
+        return response.data.data;
+    }).catch((error) => {
+
+    })
+
+}
 
 

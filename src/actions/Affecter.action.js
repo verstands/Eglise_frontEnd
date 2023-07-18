@@ -37,15 +37,13 @@ export const addMembreAffecter = (data) => {
                 dispatch({ type: ADD_MEMBRE_AFFECTER, payload: data })
                 Swal.fire({
                     icon: 'success',
-                    text: `${response.data.message}`,
+                    text: `Tous les champs sont obligatoire !`,
                     confirmButtonText: 'OK'
                 })
             }).catch((error) => {
-
                 if (error.response && error.response.status === 422) {
                     Swal.fire({
                         icon: 'error',
-                        title: `${JSON.stringify(data)}`,
                         text: `Tous les champs sont obligatoire !`,
                     });
                 } else if (error.response.status === 500) {
