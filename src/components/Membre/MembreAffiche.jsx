@@ -20,7 +20,7 @@ const MembreAffiche = () => {
                 <div className="row">
                     <div className="col-md-6">
                         &nbsp;&nbsp;<Link to="/addmembre" className="btn btn-success btn-lg "><span ><i className="fa fa-add"></i></span></Link>
-                        &nbsp;&nbsp;<Link to="/addmembre" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
+                        &nbsp;&nbsp;<Link to="/Listemembres" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
                     </div>
                     <div className="col-md-5">
                         <input

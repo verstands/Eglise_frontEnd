@@ -87,8 +87,22 @@ const AffecterMembre = () => {
                         </div>
                     </div>
                 </form>
-                
             </div>
+            <table class="table table-hover my-0">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nom</th>
+                            <th>Postnom</th>
+                            <th>Prenom</th>
+                            <th>Email</th>
+                            <th>Telephone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+            </table>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component  } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Login from '../pages/Login';
 import Dashboad from '../pages/Dashboad';
@@ -21,6 +21,9 @@ import Communication from '../pages/Communication';
 import Materiel from '../pages/Materiel';
 import UpdateMmembre from '../components/Membre/UpdateMmembre';
 import UpdateMouvement from '../components/Membre/UpdateMouvement';
+import MembrePdfId from '../components/Membre/MembrePdf';
+import MembrePdfIdFiche from '../components/Membre/MembreLPdf';
+import MmebreListePdf from '../components/Membre/MmebreListePdf';
 
 class IndexRoute extends Component {
     render(){
@@ -45,6 +48,9 @@ class IndexRoute extends Component {
                 <Route path="/Communication"  element={<Communication />} />
                 <Route path="/materiel"  element={<Materiel />} />
                 <Route path="/UpdateMouvement"  element={<UpdateMouvement />} />
+                <Route path="/MembrePdfId/:id"  element={<MembrePdfId />} />
+                <Route path="/MembrePdfIdFiche/:id"  element={<MembrePdfIdFiche />} />MmebreListePdf
+                <Route path="/Listemembres"  element={<MmebreListePdf />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );
