@@ -1,7 +1,7 @@
-import { 
-   GET_DEPARTEMENT, 
-   DELETE_DEPARTEMENT, 
-   GET_DEPARTEMENT_ACTIVITE 
+import {
+   GET_DEPARTEMENT,
+   DELETE_DEPARTEMENT,
+   ADD_DEPATERMENT
 } from "../actions/Departemant.action";
 
 
@@ -13,8 +13,8 @@ export default function deparmentReduceur(state = initiatState, action) {
          return action.payload
       case DELETE_DEPARTEMENT:
          return state.filter((post) => post.id != action.payload);
-      case GET_DEPARTEMENT_ACTIVITE :
-         return action.payload
+      case ADD_DEPATERMENT:
+         return [action.payload, ...state];
       default:
          return state
    }

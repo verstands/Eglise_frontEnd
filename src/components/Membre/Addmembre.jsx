@@ -9,11 +9,12 @@ import { getDepartementActivite } from "../../actions/Departemant.action";
 const Addmembre = () => {
     const form = useRef()
     const departement = useSelector((state) => state.deparmentReduceur);
+    const departementActivite = useSelector((state) => state.deparmentActiviteReduceur);
     const dispatch = useDispatch();
     
 
     const hnadleActivite = (event) => {
-        getDepartementActivite(event.target.value);
+       dispatch(getDepartementActivite(event.target.value));
     }
     const handleSave = async (e) => {
         e.preventDefault();
@@ -87,15 +88,16 @@ const Addmembre = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Etat civil</label>
-                                            <select name="" className="form-control" id="">
+                                            <select name="" className="form-control" id=""> 
                                                 <option value="celibataire">Celibataire</option>
                                                 <option value="marie">Marié(e)</option>
                                                 <option value="divorce">Dirvocé(e)</option>
                                             </select>
                                         </div>
                                         <div className="col-md-4">
-                                            <label htmlFor="">Daprtement</label>
+                                            <label htmlFor="">Dapartement</label>
                                             <select name="" className="form-control" id="" onChange={hnadleActivite} >
+                                                <option>Selectionner un departement</option>
                                                 {
                                                     Array.isArray(departement) && departement.map((dp) => {
                                                         return(
@@ -107,8 +109,15 @@ const Addmembre = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Profetion</label>
-                                            
-                                            <input type="text" class="form-control" placeholder="Proffesion" /><br />
+                                            <select name="" className="form-control" >
+                                                {
+                                                    Array.isArray(departementActivite) && departementActivite.map((dp) => {
+                                                        return(
+                                                            <option value={dp.id} key={dp.id}>{dp.activite}</option>
+                                                        )
+                                                    })
+                                                }
+                                            </select><br />
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Mot de passe</label>

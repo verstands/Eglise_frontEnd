@@ -19,6 +19,8 @@ import Paie from '../pages/Paie';
 import Plannig from '../pages/Plannig';
 import Communication from '../pages/Communication';
 import Materiel from '../pages/Materiel';
+import UpdateMmembre from '../components/Membre/UpdateMmembre';
+import UpdateMouvement from '../components/Membre/UpdateMouvement';
 
 class IndexRoute extends Component {
     render(){
@@ -28,8 +30,9 @@ class IndexRoute extends Component {
                 <Route path="/dashboad"  element={<Dashboad />} />
                 <Route path="/membre"  element={<Membre />} />
                 <Route path="/addmembre"  element={<Addmembre />} />
-                <Route path="/updatemembre"  element={<Updatemembre />} />
-                <Route path="/detailmembre"  element={<Detailmembre />} />
+                <Route path="/updatemembre/:id"  element={<Updatemembre />} />
+                <Route path="/updatemembreEnfant/:id"  element={<UpdateMmembre />} />
+                <Route path="/detailmembre/:id"  element={<Detailmembre />} />
                 <Route path="/addmembreEnfant"  element={<AddMembreEnfant />} />
                 <Route path="/AddmouvementMembre"  element={<AddmouvementMembre />} />
                 <Route path="/AddNouveau"  element={<AddNouveau />} />
@@ -41,6 +44,7 @@ class IndexRoute extends Component {
                 <Route path="/Planning"  element={<Plannig />} />
                 <Route path="/Communication"  element={<Communication />} />
                 <Route path="/materiel"  element={<Materiel />} />
+                <Route path="/UpdateMouvement"  element={<UpdateMouvement />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );

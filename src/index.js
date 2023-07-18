@@ -8,7 +8,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './Reducers';
 import { getMembre } from './actions/membre.action';
 import { getMembreEnfant } from './actions/Enfant.action';
-import { getMouvement } from './actions/Mouvement.action';
+import { getMouvements } from './actions/Mouvement.action';
 import { getDepartement, getDepartementActivite } from './actions/Departemant.action';
 import { getNouveaune } from './actions/Nouveau.action';
 import { getCategorie } from './actions/CategorieAction';
@@ -29,7 +29,7 @@ const store = configureStore({
 
 store.dispatch(getMembre())
 store.dispatch(getMembreEnfant())
-store.dispatch(getMouvement())
+store.dispatch(getMouvements())
 store.dispatch(getDepartement())
 store.dispatch(getNouveaune())
 store.dispatch(getCategorie())

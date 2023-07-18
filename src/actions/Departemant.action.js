@@ -44,17 +44,10 @@ export const addDepartement = (data) => {
             }).catch((error) => {
 
                 if (error.response && error.response.status === 422) {
-                    if (error.response.data.message.includes('The nom field is required')) {
-                        Swal.fire({
-                            icon: 'error',
-                            text: `${error.response.data.message}`,
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            text: `Tous les champs sont obligatoire !`,
-                        });
-                    }
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
                 } else if (error.response.status === 500) {
                     Swal.fire({
                         icon: 'error',

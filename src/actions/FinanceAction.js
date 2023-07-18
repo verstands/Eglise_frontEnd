@@ -91,7 +91,15 @@ export const deleteFinance = (id) => {
                         });
                     })
                     .catch((error) => {
-                        alert(error);
+                        if (error.response && error.response.status === 401) {
+                            Swal.fire({
+                                icon: 'error',
+                                text: `auht`,
+                            });
+                        }else{
+
+                            alert(error + 'hh')
+                        } 
                     });
             }
         });

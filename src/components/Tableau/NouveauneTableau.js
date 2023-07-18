@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { deleteNouveau } from '../../actions/Nouveau.action';
 
 
-const NouveauneTableau = ({nom, telephone,id, culte, egliseprovenance, categorie, adresse}) => {
+const NouveauneTableau = ({ nom, telephone, id, culte, egliseprovenance, categorie, adresse }) => {
     const dispatch = useDispatch();
     return (
         <tr>
@@ -15,10 +15,12 @@ const NouveauneTableau = ({nom, telephone,id, culte, egliseprovenance, categorie
             <td class="d-none d-xl-table-cell">{culte}</td>
             <td class="d-none d-xl-table-cell">{egliseprovenance}</td>
             <td class="d-none d-md-table-cell">
-                <button class="badge bg-danger btn" onClick={() => dispatch(deleteNouveau(id))}>
-                    <span class="badge bg-danger">Delete</span>
+                <button class="btn-lg bg-danger btn" onClick={() => dispatch(deleteNouveau(id))}>
+                    <i className="fa fa-trash" style={{ color: 'white' }}></i>
                 </button>&nbsp;
-                <Link to="/updatemembre" class="badge bg-success btn"><span class="badge bg-success">Update</span></Link>&nbsp;
+                <Link to="/updatemembre" class="btn-lg bg-success btn">
+                    <i className="fa fa-edit" style={{ color: 'white' }}></i>
+                </Link>&nbsp;
             </td>
         </tr>
     )

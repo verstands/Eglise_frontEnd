@@ -12,11 +12,12 @@ const MouvementTableau = ({ mission,id,  membre }) => {
                 <td>{membre}</td>
                 <td class="d-none d-xl-table-cell">{mission}</td>
                 <td class="d-none d-md-table-cell">
-                    <button class="badge bg-danger btn"  onClick={() => dispatch(deleteMouvement(id))}>
-                        <span class="badge bg-danger">Delete</span>
+                    <button class="btn-lg bg-danger btn"  onClick={() => dispatch(deleteMouvement(id))}>
+                    <i className="fa fa-edit" style={{color: 'white'}}></i>
                     </button>&nbsp;
-                    <Link to="/updatemembre" class="badge bg-success btn"><span class="badge bg-success">Update</span></Link>&nbsp;
-                    <Link to="/AddmouvementMembre" class="badge bg-success btn"><span class="badge bg-success">Adds</span></Link>
+                    <Link to="/UpdateMouvement" class="btn-lg bg-success btn">
+                        <i className="fa-solid fa-edit" style={{color: 'white'}}></i>
+                    </Link>&nbsp;
                 </td>
             </tr>
         </>

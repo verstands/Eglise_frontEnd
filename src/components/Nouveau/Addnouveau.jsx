@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useDispatch, useSelector } from "react-redux";
-import { addNouveau } from "../../actions/Nouveau.action";
+import { addNouveau, getNouveaune } from "../../actions/Nouveau.action";
 
 
 const AddNouveau = () => {
@@ -21,7 +21,8 @@ const AddNouveau = () => {
             egliseprovenance : form.current[4].value,
             categorie : form.current[5].value,
         }
-        dispatch(addNouveau(data))
+        dispatch(addNouveau(data));
+        dispatch(getNouveaune());
         form.current.reset();
     }
     return (
