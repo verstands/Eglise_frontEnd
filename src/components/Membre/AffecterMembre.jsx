@@ -3,16 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addMembreAffecter, getMembreAffecter } from "../../actions/Affecter.action";
 import Select from "react-select";
+import AffecterTableau from "../Tableau/affecterTableau";
 
 
 const AffecterMembre = () => {
-    const form = useRef();
     const dispatch = useDispatch();
     const [selectCash, setselectCash] = useState("0");
     const [SelectedDepartement, setSelectedDepartement] = useState("");
     const [SelectedMembre, setSelectedMembre] = useState("");
-    const departement = useSelector((state) => state.deparmentReduceur);
+    const departement_data = useSelector((state) => state.deparmentReduceur);
     const membre = useSelector((state) => state.membreReducer);
+    const affectation_data = useSelector((state) => state.affecationReducer);
 
     const handleChangeRadio = async (e) => {
         setselectCash(e.target.value);
@@ -23,9 +24,10 @@ const AffecterMembre = () => {
             nom_membre: SelectedMembre,
             departement_id: SelectedDepartement,
             state: selectCash
-        }
-        dispatch(addMembreAffecter(data))
-        form.current.reset();
+        };
+        dispatch(getMembreAffecter());
+        dispatch(addMembreAffecter(data));
+  
     }
 
     const handleChange = (selectedOption) => {
@@ -36,7 +38,7 @@ const AffecterMembre = () => {
         setSelectedMembre(selectedOption.value);
     }
     const handleDepartement = () => {
-        const departements = Array.isArray(departement) && departement.map((vh) => ({
+        const departements = Array.isArray(departement_data) && departement_data.map((vh) => ({
             label: vh.nom_depart,
             value: vh.id,
         }));
@@ -67,7 +69,7 @@ const AffecterMembre = () => {
                     <h1 class="text-center">Affecter un membre de departement</h1>
                 </div>
                 <hr />
-                <form ref={form} onSubmit={(e) => handleSave(e)}>
+                <form  onSubmit={(e) => handleSave(e)}>
                     <div className="row">
                         <div className="col-md-6">
                             <label>Nom membre</label>
@@ -88,21 +90,33 @@ const AffecterMembre = () => {
                     </div>
                 </form>
             </div>
-            <table class="table table-hover my-0">
+            <hr />
+            <div>
+                <div className="col-md-6">
+                    &nbsp;&nbsp;<Link to="/Listemembres" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
+                </div>
+                <table class="table table-hover my-0">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Nom</th>
-                            <th>Postnom</th>
-                            <th>Prenom</th>
-                            <th>Email</th>
-                            <th>Telephone</th>
+                            <th>Mmebre</th>
+                            <th>Dpartement</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {Array.isArray(affectation_data) && affectation_data
+                            .map((dataEnfant, indexEnfant) => (
+                                <AffecterTableau
+                                    membre={dataEnfant.nom_membre}
+                                    id={dataEnfant.id}
+                                    departement={dataEnfant.departement_id}
+                                    key={indexEnfant}
+                                />
+                            ))
+                        }
                     </tbody>
-            </table>
+                </table>
+            </div>
         </>
     )
 }

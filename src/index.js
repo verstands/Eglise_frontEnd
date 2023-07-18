@@ -21,6 +21,7 @@ import { getCaisse } from './actions/CaisseAction';
 import { getTypeDepense } from './actions/TypeDepenseAction';
 import { getCommunication } from './actions/CommunicationAction';
 import { getMateriel } from './actions/MaterielAction';
+import { getMembreAffecter } from './actions/Affecter.action';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -43,6 +44,7 @@ store.dispatch(getTypeDepense())
 store.dispatch(getCommunication())
 store.dispatch(getMateriel())
 store.dispatch(getDepartementActivite())
+store.dispatch(getMembreAffecter())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,14 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
-function affecterTableau({nom, id, departement}) {
+function AffecterTableau({membre, id, departement}) {
+    const dispatch = useDispatch();
     return (
         <>
             <tr>
-                <td><i className="fa fa-user-circle" style={{ fontSize: '30px' }}></i></td>
-                <td className="d-none d-xl-table-cell">{nom}</td>
-                <td className="d-none d-xl-table-cell">{departement}</td>
+                <td className="d-none d-xl-table-cell">{membre && membre.nom + " " + membre.prenom }</td>
+                <td className="d-none d-xl-table-cell">{departement && departement.nom_depart}</td>
                 <td className="d-none d-md-table-cell">
-                    <button className="btn-lg bg-danger btn" onClick={() => dispatch(deleteMembre(id))}>
+                    <button className="btn-lg bg-danger btn" onClick={() => dispatch()}>
                         <i className="fa fa-trash" style={{ color: 'white' }}></i>
                     </button>&nbsp;
                 </td>
@@ -17,4 +18,4 @@ function affecterTableau({nom, id, departement}) {
     )
 }
 
-export default affecterTableau
+export default AffecterTableau

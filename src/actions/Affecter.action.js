@@ -4,22 +4,22 @@ import Swal from "sweetalert2";
 
 
 export const ADD_MEMBRE_AFFECTER = "ADD_MEMBRE_AFFECTER";
-export const GET_AFFECTER = "GET_MEMBRE_AFFECTER";
+export const GET_MEMEBRE_AFFECTER = "GET_MEMBRE_AFFECTER";
 export const DELETE_AFFECTER = "DELETE_AFFECTER";
 const url = "http://localhost:5000/api/";
 
 export const getMembreAffecter = () => {
     return (dispatch) => {
-        return axios.get(`${url}affecters`, {
+        return axios.get(`${url}affectations`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-            dispatch({ type: GET_AFFECTER, payload: response.data.data })
+            dispatch({ type: GET_MEMEBRE_AFFECTER, payload: response.data.data })
         }).catch((error) => {
-
+            alert(error)
         })
     }
 }
