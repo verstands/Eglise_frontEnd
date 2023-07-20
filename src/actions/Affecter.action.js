@@ -97,6 +97,19 @@ export const deleteAffecter = (id) => {
     };
 };
 
+export const getMouvementId = (id) => {
+    return axios.get(`${url}mouvement/${id}`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: Token()
+        }
+    }).then((response) => {
+        return response.data.data;
+    }).catch((error) => {
+        alert(error)
+    })
 
+}
 
 

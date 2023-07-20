@@ -49,7 +49,7 @@ class IndexRoute extends Component {
                 <Route path="/Planning"  element={<Plannig />} />
                 <Route path="/Communication"  element={<Communication />} />
                 <Route path="/materiel"  element={<Materiel />} />
-                <Route path="/UpdateMouvement"  element={<UpdateMouvement />} />
+                <Route path="/UpdateMouvement/:id"  element={<UpdateMouvement />} />
                 <Route path="/MembrePdfId/:id"  element={<MembrePdfId />} />
                 <Route path="/MembrePdfIdFiche/:id"  element={<MembrePdfIdFiche />} />
                 <Route path="/Listemembres"  element={<MmebreListePdf />} />
