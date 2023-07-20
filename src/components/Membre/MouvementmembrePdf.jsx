@@ -112,10 +112,10 @@ function MouvementmembrePdf() {
                                                 <Text style={styles.tableCell}>{n++}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.nom_membre.nom}</Text>
+                                                <Text style={styles.tableCell}>{item.nom_membrem}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.departement_id.nom_depart}</Text>
+                                                <Text style={styles.tableCell}>{item.departement_id}</Text>
                                             </View>
                                         </View>
                                     </>
