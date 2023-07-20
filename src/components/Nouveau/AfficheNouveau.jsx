@@ -23,7 +23,7 @@ const AfficheNouveau = () => {
                         <Link to="/AddNouveau">&nbsp;&nbsp;<span class="btn-lg btn-success">
                             <i className="fa fa-add"></i>
                         </span></Link>
-                        <Link to="/AddNouveau">&nbsp;&nbsp;<span class="btn-lg btn-success">
+                        <Link to="/NouveauneePdf">&nbsp;&nbsp;<span class="btn-lg btn-success">
                             <i className="fa fa-print"></i>
                         </span></Link>
                     </div>
