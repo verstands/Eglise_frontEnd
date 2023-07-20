@@ -1,8 +1,9 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { getNouveauId } from "../../actions/Nouveau.action";
 
 
 
@@ -13,7 +14,20 @@ const UpdateNouveau = () => {
     const categorie = useSelector((state) => state.categorieReducer)
     const culte = useSelector((state) => state.culteReducer)
 
-   
+    
+    const [membreid, setMembreid] = useState(null);
+
+    useEffect(() => {
+        getNouveauId(id).then((membre) => {
+            setMembreid(membre);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }, [id]);
+
+    if (!membreid) {
+        return <div>Loading...</div>
+    }
     const handleSave = async (e) => {
         e.preventDefault();
         const data = {
