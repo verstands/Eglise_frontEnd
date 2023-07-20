@@ -18,7 +18,7 @@ const NouveauneTableau = ({ nom, telephone, id, culte, egliseprovenance, categor
                 <button class="btn-lg bg-danger btn" onClick={() => dispatch(deleteNouveau(id))}>
                     <i className="fa fa-trash" style={{ color: 'white' }}></i>
                 </button>&nbsp;
-                <Link to="/updatemembre" class="btn-lg bg-success btn">
+                <Link to={`/UpdateNouveau/${id}`} class="btn-lg bg-success btn">
                     <i className="fa fa-edit" style={{ color: 'white' }}></i>
                 </Link>&nbsp;
             </td>

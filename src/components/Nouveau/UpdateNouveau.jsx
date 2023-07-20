@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useSelector, useDispatch } from "react-redux";
@@ -38,8 +38,6 @@ const UpdateNouveau = () => {
             egliseprovenance : form.current[4].value,
             categorie : form.current[5].value,
         }
-        dispatch(addNouveau(data));
-        dispatch(getNouveaune());
         form.current.reset();
     }
     return (
@@ -56,19 +54,20 @@ const UpdateNouveau = () => {
                                     <div className="row">
                                         <div className="col-md-4">
                                             <label>Nom</label>
-                                            <input type="text" class="form-control" placeholder="Nom" /><br />
+                                            <input type="text" value={membreid.nom} class="form-control" placeholder="Nom" /><br />
                                         </div>
                                         <div className="col-md-4">
                                             <label>Adresse</label>
-                                            <input type="text" class="form-control" placeholder="Adresse" />
+                                            <input type="text" value={membreid.adresse} class="form-control" placeholder="Adresse" />
                                         </div>
                                         <div className="col-md-4">
                                             <label>Telephone</label>
-                                            <input type="number" class="form-control" placeholder="Telephone" />
+                                            <input type="number" value={membreid.telephone} class="form-control" placeholder="Telephone" />
                                         </div>
                                         <div className="col-md-4">
                                             <label>Categorie</label>
                                             <select className="form-control" >
+                                                <option >{membreid.categorie}</option>
                                                 {
                                                     Array.isArray(categorie) && categorie.map((cat) => {
                                                         return <option value={cat.id} key={cat.id}>{cat.nom_categorie}</option>
@@ -78,11 +77,12 @@ const UpdateNouveau = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label>Eglise provenance</label>
-                                            <input type="text" class="form-control" /><br />
+                                            <input type="text" value={membreid.egliseprovenance} class="form-control" /><br />
                                         </div>
                                         <div className="col-md-4">
                                             <label>Culte</label>
                                             <select className="form-control" name="" id="">
+                                                <option>{membreid.culte && membreid.culte.nom_culte}</option>
                                                 {
                                                     Array.isArray(culte) && culte.map((clt) => {
                                                         return <option value={clt.id} key={clt.id}>{clt.nom_culte}</option>
