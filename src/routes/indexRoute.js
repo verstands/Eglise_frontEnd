@@ -24,7 +24,8 @@ import UpdateMouvement from '../components/Membre/UpdateMouvement';
 import MembrePdfId from '../components/Membre/MembrePdf';
 import MembrePdfIdFiche from '../components/Membre/MembreLPdf';
 import MmebreListePdf from '../components/Membre/MmebreListePdf';
-import AffecterPdf from '../components/Membre/AffecterPdf';
+import AffecterPdf from '../components/Membre/AffecterPdf';MembreEnfantPdf
+import MembreEnfantPdf from '../components/Membre/MembreEnfantPdf';
 
 class IndexRoute extends Component {
     render(){
@@ -50,9 +51,10 @@ class IndexRoute extends Component {
                 <Route path="/materiel"  element={<Materiel />} />
                 <Route path="/UpdateMouvement"  element={<UpdateMouvement />} />
                 <Route path="/MembrePdfId/:id"  element={<MembrePdfId />} />
-                <Route path="/MembrePdfIdFiche/:id"  element={<MembrePdfIdFiche />} />MmebreListePdf
+                <Route path="/MembrePdfIdFiche/:id"  element={<MembrePdfIdFiche />} />
                 <Route path="/Listemembres"  element={<MmebreListePdf />} />
                 <Route path="/AffecterPdf"  element={<AffecterPdf />} />
+                <Route path="/MembreEnfantPdf"  element={<MembreEnfantPdf />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );
