@@ -19,7 +19,7 @@ const MembreEnfantAffiche = () => {
                 <div className="row">
                     <div className="col-md-6">
                         &nbsp;&nbsp;<Link to="/addmembreEnfant" class=" btn-success btn-lg btn"><i className="fa fa-add"></i></Link>
-                        &nbsp;&nbsp; <Link to="/addmembreEnfant" class=" btn-success btn-lg btn"><i className="fa fa-print"></i></Link>
+                        &nbsp;&nbsp; <Link to="/MembreEnfantPdf" class=" btn-success btn-lg btn"><i className="fa fa-print"></i></Link>
                     </div>
                     <div className="col-md-5">
                         <input

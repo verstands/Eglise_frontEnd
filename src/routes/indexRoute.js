@@ -24,7 +24,7 @@ import UpdateMouvement from '../components/Membre/UpdateMouvement';
 import MembrePdfId from '../components/Membre/MembrePdf';
 import MembrePdfIdFiche from '../components/Membre/MembreLPdf';
 import MmebreListePdf from '../components/Membre/MmebreListePdf';
-import AffecterPdf from '../components/Membre/AffecterPdf';MembreEnfantPdf
+import AffecterPdf from '../components/Membre/AffecterPdf';
 import MembreEnfantPdf from '../components/Membre/MembreEnfantPdf';
 
 class IndexRoute extends Component {

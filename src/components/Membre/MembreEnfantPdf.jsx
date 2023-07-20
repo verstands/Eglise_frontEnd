@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 });
 
 function MembreEnfantPdf() {
-    const carss = useSelector((state) => state.affecationReducer);
+    const carss = useSelector((state) => state.enfantReducer);
     let n = 1;
 
     return (
@@ -99,10 +99,16 @@ function MembreEnfantPdf() {
                                         <Text style={styles.tableCellHeader}>N°</Text>
                                     </View>
                                     <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Membre</Text>
+                                        <Text style={styles.tableCellHeader}>Nom</Text>
                                     </View>
                                     <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Departement</Text>
+                                        <Text style={styles.tableCellHeader}>Date de naissance</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Sexe</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Famille</Text>
                                     </View>
                                 </View>
                                 {Array.isArray(carss) && carss.map((item) => (
@@ -112,10 +118,16 @@ function MembreEnfantPdf() {
                                                 <Text style={styles.tableCell}>{n++}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.nom_membre.nom}</Text>
+                                                <Text style={styles.tableCell}>{item.nom}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.departement_id.nom_depart}</Text>
+                                                <Text style={styles.tableCell}>{item.datenaisse}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.sexe}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.famille}</Text>
                                             </View>
                                         </View>
                                     </>
