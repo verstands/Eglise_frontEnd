@@ -96,3 +96,19 @@ export const deleteNouveau = (id) => {
         });
     };
 };
+
+export const getNouveauId = (id) => {
+
+    return axios.get(`${url}nouveauvenu/${id}`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: Token()
+        }
+    }).then((response) => {
+        return response.data.data;
+    }).catch((error) => {
+
+    })
+
+}

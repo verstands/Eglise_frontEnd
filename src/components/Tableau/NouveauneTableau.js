@@ -12,7 +12,7 @@ const NouveauneTableau = ({ nom, telephone, id, culte, egliseprovenance, categor
             <td class="d-none d-xl-table-cell">{adresse}</td>
             <td class="d-none d-xl-table-cell">{telephone}</td>
             <td class="d-none d-xl-table-cell">{categorie}</td>
-            <td class="d-none d-xl-table-cell">{culte}</td>
+            <td class="d-none d-xl-table-cell">{culte && culte.nom_culte}</td>
             <td class="d-none d-xl-table-cell">{egliseprovenance}</td>
             <td class="d-none d-md-table-cell">
                 <button class="btn-lg bg-danger btn" onClick={() => dispatch(deleteNouveau(id))}>

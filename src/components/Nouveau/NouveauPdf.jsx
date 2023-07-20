@@ -133,7 +133,7 @@ function NouveauPdf() {
                                                 <Text style={styles.tableCell}>{item.telephone}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.culte}</Text>
+                                                <Text style={styles.tableCell}>{item.culte && item.culte.nom_culte}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
                                                 <Text style={styles.tableCell}>{item.egliseprovenance}</Text>

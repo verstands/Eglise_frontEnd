@@ -58,7 +58,7 @@ class IndexRoute extends Component {
                 <Route path="/AffecterPdf"  element={<AffecterPdf />} />
                 <Route path="/MembreEnfantPdf"  element={<MembreEnfantPdf />} />
                 <Route path="/MouvementmembrePdf"  element={<MouvementmembrePdf />} />
-                <Route path="/NouveauPdf"  element={<NouveauPdf />} />
+                <Route path="/NouveauneePdf"  element={<NouveauPdf />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );
