@@ -8,6 +8,7 @@ import MembreAffiche from "../components/Membre/MembreAffiche";
 import AffecterMembre from "../components/Membre/AffecterMembre";
 import MembreEnfantAffiche from "../components/Membre/membreEnfantAffiche";
 import Mouvementmembre from "../components/Membre/Mouvementmembre";
+import RapportMouveament from "../components/Membre/RapportMouveament";
 
 const Membre = () => {
     return (
@@ -66,7 +67,7 @@ const Membre = () => {
                                             <a
                                                 class="nav-link"
                                                 data-bs-toggle="tab"
-                                                href="#RapportM"
+                                                href="#mouvementRapport"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
                                                 <span class="hidden-xs-down">Rapport Mouvement Membre</span></a
@@ -88,8 +89,8 @@ const Membre = () => {
                                         <div class="tab-pane p-20" id="mouvementM" role="tabpanel">
                                             <Mouvementmembre />
                                         </div>
-                                        <div class="tab-pane p-20" id="mouvementM" role="tabpanel">
-                                            <Mouvementmembre />
+                                        <div class="tab-pane p-20" id="mouvementRapport" role="tabpanel">
+                                            <RapportMouveament />
                                         </div>
                                     </div>
                                 </div>
