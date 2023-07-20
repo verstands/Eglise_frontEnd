@@ -3,7 +3,7 @@ import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDepartementActivite } from "../../actions/Departemant.action";
+
 
 
 const Updatemembre = () => {
@@ -14,9 +14,7 @@ const Updatemembre = () => {
     const dispatch = useDispatch();
     const membreid = useSelector((state) => state.membreReducer[id]);
 
-    const hnadleActivite = (event) => {
-        dispatch(getDepartementActivite(event.target.value));
-     }
+   
      const handleSave = async (e) => {
          e.preventDefault();
  
@@ -95,7 +93,7 @@ const Updatemembre = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Dapartement</label>
-                                            <select name="" className="form-control" id="" onChange={hnadleActivite} >
+                                            <select name="" className="form-control" id="" >
                                                 <option value={membreid.activite} key={membreid.activite}>sss</option>
                                                 {
                                                     Array.isArray(departement) && departement.map((dp) => {
@@ -109,13 +107,7 @@ const Updatemembre = () => {
                                         <div className="col-md-4">
                                             <label htmlFor="">Profetion</label>
                                             <select name="" className="form-control" >
-                                                {
-                                                    Array.isArray(departementActivite) && departementActivite.map((dp) => {
-                                                        return(
-                                                            <option value={dp.id} key={dp.id}>{dp.activite}</option>
-                                                        )
-                                                    })
-                                                }
+                                               
                                             </select><br />
                                         </div>
                                         <div className="col-md-4">

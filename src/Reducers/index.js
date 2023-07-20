@@ -13,7 +13,6 @@ import caisseReducer from "./CaisseReducer";
 import TypeDepenseReducer from "./TypeDepenseReducer";
 import communicationReducer from "./CommunicationReducer";
 import materielReducer from "./MaterielReducer";
-import deparmentActiviteReduceur from "./DepartementActiviteReducer";
 import mouvementReducer from "./Mouvement.reducer";
 import affecationReducer from "./AffectaionReducer";
 
@@ -33,7 +32,6 @@ export default combineReducers({
     TypeDepenseReducer,
     communicationReducer,
     materielReducer,
-    deparmentActiviteReduceur,
     affecationReducer
     
 });

@@ -3,19 +3,16 @@ import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useDispatch, useSelector } from "react-redux";
 import { addMembre, getMembre } from "../../actions/membre.action";
-import { getDepartementActivite } from "../../actions/Departemant.action";
+
 
 
 const Addmembre = () => {
     const form = useRef()
     const departement = useSelector((state) => state.deparmentReduceur);
-    const departementActivite = useSelector((state) => state.deparmentActiviteReduceur);
     const dispatch = useDispatch();
     
 
-    const hnadleActivite = (event) => {
-       dispatch(getDepartementActivite(event.target.value));
-    }
+ 
     const handleSave = async (e) => {
         e.preventDefault();
 
@@ -96,7 +93,7 @@ const Addmembre = () => {
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Dapartement</label>
-                                            <select name="" className="form-control" id="" onChange={hnadleActivite} >
+                                            <select name="" className="form-control" id="" >
                                                 <option>Selectionner un departement</option>
                                                 {
                                                     Array.isArray(departement) && departement.map((dp) => {
@@ -110,13 +107,7 @@ const Addmembre = () => {
                                         <div className="col-md-4">
                                             <label htmlFor="">Profetion</label>
                                             <select name="" className="form-control" >
-                                                {
-                                                    Array.isArray(departementActivite) && departementActivite.map((dp) => {
-                                                        return(
-                                                            <option value={dp.id} key={dp.id}>{dp.activite}</option>
-                                                        )
-                                                    })
-                                                }
+                                                
                                             </select><br />
                                         </div>
                                         <div className="col-md-4">

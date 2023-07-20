@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 
 export const ADD_MEMBRE_AFFECTER = "ADD_MEMBRE_AFFECTER";
-export const GET_MEMEBRE_AFFECTER = "GET_MEMBRE_AFFECTER";
+export const GET_MEMEBRE_AFFECTER = "GET_MEMEBRE_AFFECTER";
 export const DELETE_AFFECTER = "DELETE_AFFECTER";
 const url = "http://localhost:5000/api/";
 
@@ -26,7 +26,7 @@ export const getMembreAffecter = () => {
 
 export const addMembreAffecter = (data) => {
     return (dispatch) => {
-        return axios.post(`${url}affectation`, data,
+        return axios.post(`${url}affectation`,data,
             {
                 headers: {
                     Accept: 'application/json',
@@ -37,7 +37,7 @@ export const addMembreAffecter = (data) => {
                 dispatch({ type: ADD_MEMBRE_AFFECTER, payload: data })
                 Swal.fire({
                     icon: 'success',
-                    text: `Tous les champs sont obligatoire !`,
+                    text: `${response.data.message}`,
                     confirmButtonText: 'OK'
                 })
             }).catch((error) => {

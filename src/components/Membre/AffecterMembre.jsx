@@ -27,7 +27,6 @@ const AffecterMembre = () => {
         };
         dispatch(getMembreAffecter());
         dispatch(addMembreAffecter(data));
-  
     }
 
     const handleChange = (selectedOption) => {
