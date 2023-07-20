@@ -92,7 +92,7 @@ const AffecterMembre = () => {
             <hr />
             <div>
                 <div className="col-md-6">
-                    &nbsp;&nbsp;<Link to="/Listemembres" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
+                    &nbsp;&nbsp;<Link to="/AffecterPdf" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
                 </div>
                 <table class="table table-hover my-0">
                     <thead>
