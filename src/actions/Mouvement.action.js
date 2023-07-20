@@ -58,9 +58,9 @@ export const deleteMouvement = (id) => {
     };
 };
 
-export const addRapportMembreMouvement = ({ datadebut, datafin, nom }) => {
+export const addRapportMembreMouvement = (du, au, type) => {
     return (dispatch) => {
-        return axios.get(`${url}mouvementmembre/${datadebut},${datafin},${nom}`,
+        return axios.get(`${url}mouvementmembre/${du}/${au}/${type}`,
             {
                 headers: {
                     Accept: 'application/json',
@@ -68,6 +68,7 @@ export const addRapportMembreMouvement = ({ datadebut, datafin, nom }) => {
                     Authorization: Token()
                 }
             }).then((response) => {
+                console.log("addRapportMembreMouvement response", response);
                 return response.data.data;
             }).catch((error) => {
                 if (error.response && error.response.status === 422) {
@@ -82,11 +83,7 @@ export const addRapportMembreMouvement = ({ datadebut, datafin, nom }) => {
                         confirmButtonText: 'OK'
                     })
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        text: `${error.response.data.message}`,
-                        confirmButtonText: 'OK'
-                    })
+                    alert(error);
                 }
             })
     }
