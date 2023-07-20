@@ -105,17 +105,17 @@ function AffecterPdf() {
                                         <Text style={styles.tableCellHeader}>Departement</Text>
                                     </View>
                                 </View>
-                                {carss.map((item) => (
+                                {Array.isArray(carss) && carss.map((item) => (
                                     <>
                                         <View key={item.id} style={styles.tableRow}>
                                             <View style={styles.tableCol}>
                                                 <Text style={styles.tableCell}>{n++}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.postnom}</Text>
+                                                <Text style={styles.tableCell}>{item.nom_membre.nom}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.prenom}</Text>
+                                                <Text style={styles.tableCell}>{item.departement_id.nom_depart}</Text>
                                             </View>
                                         </View>
                                     </>
