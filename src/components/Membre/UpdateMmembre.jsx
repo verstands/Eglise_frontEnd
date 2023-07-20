@@ -19,8 +19,7 @@ const UpdateMmembre = () => {
         });
     }, [id]);
     const handleSave = (e) => {
-        e.preventDefault();
-        
+        e.preventDefault();  
     }
 
     if (!membreid) {
@@ -47,12 +46,12 @@ const UpdateMmembre = () => {
                                         <div className="col-md-4">
                                             <label htmlFor="Nom">Date de naissance</label>
                                             <label htmlFor="Date"></label>
-                                            <input type="date" value={membreid.datenaisse}  class="form-control" placeholder="Date de naissance" />
+                                            <input type="text" value={membreid.datenaisse}  class="form-control" placeholder="Date de naissance" />
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="Nom">Sexe</label>
                                             <select name="" id="" className="form-control">
-                                                <option value="H">Homme</option>
+                                                <option value="M">Homme</option>
                                                 <option value="F">Femme</option>
                                             </select>
                                         </div>
