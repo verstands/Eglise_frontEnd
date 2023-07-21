@@ -18,14 +18,6 @@ function ConsultationTableau({ nfiche, culte_id,effectif, montant, id, typeoffra
                 <td class="d-none d-xl-table-cell">{femme}</td>
                 <td class="d-none d-xl-table-cell">{enfant}</td>
                 <td class="d-none d-xl-table-cell">{effectif}</td>
-                <td class="d-none d-md-table-cell">
-                    <button class="btn-lg bg-danger btn" onClick={() => dispatch(deleteFinance(id))}>
-                        <i className="fa fa-trash" style={{ color: 'white' }}></i>
-                    </button>&nbsp;
-                    <Link to="/updatemembre" class="btn-lg bg-success btn">
-                        <i className="fa fa-edit" style={{ color: 'white' }}></i>
-                    </Link>&nbsp;
-                </td>
             </tr>
         </>
     )

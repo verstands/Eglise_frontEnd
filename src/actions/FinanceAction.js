@@ -100,7 +100,7 @@ export const deleteFinance = (id) => {
 
 export const addRapportConsultationFinance = (du, au) => {
     return (dispatch) => {
-        return axios.get(`${url}RapportNouveau/${du}/${au}`,
+        return axios.get(`${url}ConsultationFinance/${du}/${au}`,
             {
                 headers: {
                     Accept: 'application/json',

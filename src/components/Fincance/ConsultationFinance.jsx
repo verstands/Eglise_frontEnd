@@ -9,11 +9,12 @@ import NouveauRapport from '../Tableau/NouveauRapport';
 import { addRapportNouveau } from '../../actions/Nouveau.action';
 import { useNavigate } from 'react-router-dom';
 import { addRapportConsultationFinance } from '../../actions/FinanceAction';
+import ConsultationTableau from '../Tableau/ConsultationTableau';
 
 function ConsultationFinance() {
     const form = useRef();
     const finance = useSelector((state) => state.financeReducer);
-    const [rapport, setrapport] = useState([]);
+    const [consultation, setconsultation] = useState([]);
     const dispatch = useDispatch();
     let n = 1;
 
@@ -23,7 +24,8 @@ function ConsultationFinance() {
         const au = form.current[1].value !== "" ? form.current[1].value : null;
         dispatch(addRapportConsultationFinance(du, au))
             .then((data) => {
-                setrapport(data);
+                setconsultation(data);
+                alert(consultation);
             })
             .catch((error) => {
                 console.log(error);
@@ -31,7 +33,7 @@ function ConsultationFinance() {
     }
     const navigate = useNavigate();
     const handleSubmit = () => {
-        navigate('/RapportNouveauPdf', {state : {rapport}})
+        navigate('/ConsultationFinancePdf', { state: { consultation } })
     }
     return (
         <div class="card flex-fill">
@@ -54,8 +56,8 @@ function ConsultationFinance() {
                     </div>
                     <div className="col-md-3">
                         <button
-                             onClick={handleSubmit}
-                             className="btn btn-success">
+                            onClick={handleSubmit}
+                            className="btn btn-success">
                             <i className='fa fa-print'></i>
                         </button>
                     </div>
@@ -64,7 +66,7 @@ function ConsultationFinance() {
             <table class="table table-hover my-0">
                 <thead>
                     <tr>
-                    <th>Type offrande</th>
+                        <th>Type offrande</th>
                         <th>Culte</th>
                         <th>Montant</th>
                         <th>Devise</th>
@@ -75,29 +77,35 @@ function ConsultationFinance() {
                     </tr>
                 </thead>
                 <tbody>
-                    {Array.isArray(rapport) && rapport.length === 0 ? (
+                    {Array.isArray(consultation) && consultation.length === 0 ? (
                         Array.isArray(finance) && finance.map((data, index) => (
-                            <NouveauRapport
-                                    n = {n++}
-                                    nom={data.nom}
-                                    adresse={data.adresse}
-                                    telephone={data.telephone}
-                                    id={data.id} culte={data.culte}
-                                    egliseprovenance={data.egliseprovenance}
-                                    categorie={data.categorie}
-                                    key={index} />
+                            <ConsultationTableau
+                                nfiche={data.nfiche}
+                                created_at={data.created_at}
+                                culte_id={data.culte_id}
+                                montant={data.montant}
+                                typeoffrance_id={data.typeoffrande}
+                                devise={data.devise}
+                                homme={data.homme}
+                                femme={data.femme}
+                                enfant={data.enfant}
+                                effectif={data.effectif}
+                                key={index} />
                         ))
                     ) : (
-                        Array.isArray(finance) && finance.map((data, index) => (
-                            <NouveauRapport
-                                    nom={data.nom}
-                                    n = {n++}
-                                    adresse={data.adresse}
-                                    telephone={data.telephone}
-                                    id={data.id} culte={data.culte}
-                                    egliseprovenance={data.egliseprovenance}
-                                    categorie={data.categorie}
-                                    key={index} />
+                        Array.isArray(consultation) && consultation.map((data, index) => (
+                            <ConsultationTableau
+                                nfiche={data.nfiche}
+                                created_at={data.created_at}
+                                culte_id={data.culte_id}
+                                montant={data.montant}
+                                typeoffrance_id={data.typeoffrande}
+                                devise={data.devise}
+                                homme={data.homme}
+                                femme={data.femme}
+                                enfant={data.enfant}
+                                effectif={data.effectif}
+                                key={index} />
                         ))
                     )}
                 </tbody>
