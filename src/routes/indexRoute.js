@@ -29,6 +29,7 @@ import MembreEnfantPdf from '../components/Membre/MembreEnfantPdf';
 import MouvementmembrePdf from '../components/Membre/MouvementmembrePdf';
 import NouveauPdf from '../components/Nouveau/NouveauPdf';
 import UpdateNouveau from '../components/Nouveau/UpdateNouveau';
+import RapportMouvementPdf from '../components/Membre/RapportMouvementPdf';
 
 class IndexRoute extends Component {
     render(){
@@ -61,6 +62,7 @@ class IndexRoute extends Component {
                 <Route path="/MouvementmembrePdf"  element={<MouvementmembrePdf />} />
                 <Route path="/NouveauneePdf"  element={<NouveauPdf />} />
                 <Route path="/UpdateNouveau/:id"  element={<UpdateNouveau />} />
+                <Route path="/RapportMouvementPdf"  element={<RapportMouvementPdf />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );

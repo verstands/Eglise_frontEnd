@@ -57,7 +57,7 @@ function RapportMouveament() {
                         <button className="btn btn-success">Recherche</button>
                     </div>
                     <div className="col-md-3">
-                        <Link className="btn btn-success"><i className='fa fa-print'></i></Link>
+                        <Link to={`/RapportMouvementPdf`} className="btn btn-success"><i className='fa fa-print'></i></Link>
                     </div>
                 </div>
             </form>
