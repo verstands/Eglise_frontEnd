@@ -115,13 +115,13 @@ function RapportMouvementPdf() {
                                                 <Text style={styles.tableCell}>{n++}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.id_type.nom_typem}</Text>
+                                                <Text style={styles.tableCell}>{item.id_type && item.id_type.nom_typem}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
                                                 <Text style={styles.tableCell}>{dateFormat(item.created_at, 'dd/mm/yyyy')}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.membre.nom}</Text>
+                                                <Text style={styles.tableCell}>{item.membre && item.membre.id}</Text>
                                             </View>
                                         </View>
                                     </>

@@ -25,6 +25,16 @@ const Nouveau = () => {
                                                 <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Nouveau</span></a
                                             >
                                         </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                data-bs-toggle="tab"
+                                                href="#home"
+                                                role="tab"
+                                            ><span class="hidden-sm-up"></span>
+                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Nouveau</span></a
+                                            >
+                                        </li>
                                         
 
                                     </ul>
