@@ -8,7 +8,7 @@ export const DELETE_TYPE_MOUVEMENT = "DELETE_TYPE_MOUVEMENT";
 const url = "http://localhost:5000/api/";
 
 
-export const getTypeDepense = () => {
+export const getTypeMouvement = () => {
     return (dispatch) => {
         return axios.get(`${url}typemouvements`, {
             headers: {
