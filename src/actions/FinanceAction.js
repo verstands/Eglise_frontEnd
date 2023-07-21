@@ -97,3 +97,20 @@ export const deleteFinance = (id) => {
         });
     };
 };
+
+export const addRapportConsultationFinance = (du, au) => {
+    return (dispatch) => {
+        return axios.get(`${url}RapportNouveau/${du}/${au}`,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                return response.data.data;
+            }).catch((error) => {
+                alert(error);
+            })
+    }
+}
