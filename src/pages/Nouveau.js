@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import NavOt from "../components/NavOt";
 import AfficheNouveau from "../components/Nouveau/AfficheNouveau";
+import RapportNouveau from "../components/Nouveau/RapportNouveau";
 const Nouveau = () => {
     return (
         <div class="wrapper">
@@ -29,10 +30,10 @@ const Nouveau = () => {
                                             <a
                                                 class="nav-link"
                                                 data-bs-toggle="tab"
-                                                href="#home"
+                                                href="#affecte"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Nouveau</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Rapport de nouveau venu</span></a
                                             >
                                         </li>
                                         
@@ -45,7 +46,7 @@ const Nouveau = () => {
                                             </div>
                                         </div>
                                         <div class="tab-pane p-20" id="affecte" role="tabpanel">
-                                           
+                                            <RapportNouveau />
                                         </div>
                                         <div class="tab-pane p-20" id="conge" role="tabpanel">
                                             

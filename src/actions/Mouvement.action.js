@@ -68,7 +68,6 @@ export const addRapportMembreMouvement = (du, au, type) => {
                     Authorization: Token()
                 }
             }).then((response) => {
-                console.log("addRapportMembreMouvement response", response);
                 return response.data.data;
             }).catch((error) => {
                 if (error.response && error.response.status === 422) {
