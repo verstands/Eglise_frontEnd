@@ -4,6 +4,7 @@ import NavOt from "../components/NavOt";
 import AfficheRecetteFinance from "../components/Fincance/RecetteFinance";
 import AfficheDepenseFinance from "../components/Fincance/AfficheDepenseFinance";
 import InventaireFinance from "../components/Fincance/IventaireFinance";
+import ConsultationFinance from "../components/Fincance/ConsultationFinance";
 const Finance = () => {
     return (
         <div class="wrapper">
@@ -75,7 +76,7 @@ const Finance = () => {
                                             </div>
                                         </div>
                                         <div class="tab-pane p-20" id="affecte" role="tabpanel">
-                                           
+                                            <ConsultationFinance />
                                         </div>
                                         <div class="tab-pane p-20" id="depense" role="tabpanel">
                                             <AfficheDepenseFinance />

@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import RecetteFinance from "../Tableau/RecetteFinance";
 
 const AfficheRecetteFinance = () => {
     const finance = useSelector((state) => state.financeReducer);
     const [searchTerm, setSearchTerm] = useState("");
+    const [filterData, setFilterData] = useState({});
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
+
+    const handleFilter = () => {
+        const data = {
+          searchTerm,
+          // ajoutez ici d'autres paramètres de filtrage
+        };
+        setFilterData(data);
+      };
+
+    const navigate = useNavigate();
+    const imprimer = () => {
+        navigate('/RecetteFinancePdf', {state : {}})
+    }
 
     return (<>
         <div class="card flex-fill">
@@ -21,9 +35,11 @@ const AfficheRecetteFinance = () => {
                     <Link to="/AddRecetteFinance">&nbsp;&nbsp;<span class="btn-lg btn-success">
                         <i className="fa fa-add"></i>
                     </span></Link>
-                    <Link to="">&nbsp;&nbsp;<span class="btn-lg btn-success">
-                        <i className="fa fa-print"></i>
-                    </span></Link>
+                    <button
+                        onClick={imprimer}
+                        className="btn btn-success">
+                        <i className='fa fa-print'></i>
+                    </button>
                 </div>
                 <div className="col-md-6">
                     <input
@@ -53,15 +69,20 @@ const AfficheRecetteFinance = () => {
                 <tbody>
                     {Array.isArray(finance) && finance
                         .filter((data) => {
-                            if (typeof data.nfiche !== 'string'
+                            if (typeof data.nfiche !== 'string' ||
+                                typeof data.created_at !== 'string'
+
                             ) {
                                 return false; // ignore non-string values
                             }
-                            return data.nfiche.toLowerCase().includes(searchTerm.toLowerCase())
+                            return data.nfiche.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                data.created_at.toLowerCase().includes(searchTerm.toLowerCase())
+
                         })
                         .map((data, index) =>
                             <RecetteFinance
                                 nfiche={data.nfiche}
+                                created_at={data.created_at}
                                 culte_id={data.culte_id}
                                 montant={data.montant}
                                 typeoffrance_id={data.typeoffrande}

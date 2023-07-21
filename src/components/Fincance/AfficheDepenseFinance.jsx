@@ -39,13 +39,14 @@ const AfficheDepenseFinance = () => {
                             <th>Montant</th>
                             <th>Devise</th>
                             <th>Beneficiaire</th>
+                            <th>Beneficiaire</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     {Array.isArray(type_depense) && type_depense
                             .filter((data) => {
-                                if (typeof data.created_at !== 'string') {
+                                if (typeof data.montant !== 'string') {
                                     return false; // ignore non-string values
                                 }
                                 return data.created_at.toLowerCase().includes(searchTerm.toLowerCase())

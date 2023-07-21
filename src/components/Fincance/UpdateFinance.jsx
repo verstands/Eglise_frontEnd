@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFinance, getFinance } from "../../actions/FinanceAction";
 
 
-const AddRecetteFinance = () => {
+const UpdateFinance = () => {
     const culte = useSelector((state) => state.culteReducer);
     const devise = useSelector((state) => state.deviseReducer);
     const offrande = useSelector((state) => state.offrandeReducer);
@@ -129,4 +129,4 @@ const AddRecetteFinance = () => {
         </div>
     )
 }
-export default AddRecetteFinance;
+export default UpdateFinance;

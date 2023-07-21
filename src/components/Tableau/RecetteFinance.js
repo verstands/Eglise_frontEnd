@@ -5,7 +5,7 @@ import { deleteTypeDepense } from '../../actions/TypeDepenseAction';
 import { deleteFinance } from '../../actions/FinanceAction';
 
 
-function RecetteFinance({ nfiche, culte_id,effectif, montant, id, typeoffrance_id, devise, homme, femme, enfant }) {
+function RecetteFinance({ nfiche, culte_id,effectif, montant, id, typeoffrance_id, devise, homme, femme, enfant, created_at }) {
     const dispatch = useDispatch();
     return (
         <>
