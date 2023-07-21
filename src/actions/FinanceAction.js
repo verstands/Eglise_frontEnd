@@ -67,7 +67,7 @@ export const addFinance = (postData) => {
 export const deleteFinance = (id) => {
     return (dispatch) => {
         Swal.fire({
-            title: 'Êtes-vous sûr de vouloir supprimer ce Categorie ?',
+            title: 'Êtes-vous sûr de vouloir supprimer ce Recette ?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Oui, supprimer',
@@ -91,15 +91,7 @@ export const deleteFinance = (id) => {
                         });
                     })
                     .catch((error) => {
-                        if (error.response && error.response.status === 401) {
-                            Swal.fire({
-                                icon: 'error',
-                                text: `auht`,
-                            });
-                        }else{
-
-                            alert(error + 'hh')
-                        } 
+                        alert(error)
                     });
             }
         });

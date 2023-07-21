@@ -40,8 +40,13 @@ const AfficheRecetteFinance = () => {
                 <thead>
                     <tr>
                         <th>Type offrande</th>
+                        <th>Culte</th>
                         <th>Montant</th>
                         <th>Devise</th>
+                        <th>Nombre homme</th>
+                        <th>Nombre Femme</th>
+                        <th>Nombre Enfant</th>
+                        <th>Total</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -64,6 +69,7 @@ const AfficheRecetteFinance = () => {
                                 homme={data.homme}
                                 femme={data.femme}
                                 enfant={data.enfant}
+                                effectif={data.effectif}
                                 key={index} />)}
                 </tbody>
             </table>
