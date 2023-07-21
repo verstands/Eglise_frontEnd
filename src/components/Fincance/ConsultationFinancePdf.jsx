@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
 function ConsultationFinancePdf() {
     const location = useLocation();
-    const carss = location.state.rapport;
+    const carss = location.state.consultation;
     let n = 1;
 
     return (
@@ -100,22 +100,28 @@ function ConsultationFinancePdf() {
                                         <Text style={styles.tableCellHeader}>N°</Text>
                                     </View>
                                     <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Nom</Text>
-                                    </View>
-                                    <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Adresse</Text>
-                                    </View>
-                                    <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Telephone</Text>
-                                    </View>
-                                    <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Categorie</Text>
+                                        <Text style={styles.tableCellHeader}>Type offrande</Text>
                                     </View>
                                     <View style={styles.tableColHeader}>
                                         <Text style={styles.tableCellHeader}>Culte</Text>
                                     </View>
                                     <View style={styles.tableColHeader}>
-                                        <Text style={styles.tableCellHeader}>Eglise provenance</Text>
+                                        <Text style={styles.tableCellHeader}>Montant</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Devise</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Nombre homme</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Nombre Femme</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Nombre Enfant</Text>
+                                    </View>
+                                    <View style={styles.tableColHeader}>
+                                        <Text style={styles.tableCellHeader}>Total</Text>
                                     </View>
                                 </View>
                                 {Array.isArray(carss) && carss.map((item) => (
@@ -125,22 +131,28 @@ function ConsultationFinancePdf() {
                                                 <Text style={styles.tableCell}>{n++}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.nom}</Text>
-                                            </View>
-                                            <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.adresse}</Text>
-                                            </View>
-                                            <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.telephone}</Text>
-                                            </View>
-                                            <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.categorie}</Text>
+                                                <Text style={styles.tableCell}>{item.typeoffrande && item.typeoffrande.nom_typeoff}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
                                                 <Text style={styles.tableCell}>{item.culte && item.culte.nom_culte}</Text>
                                             </View>
                                             <View style={styles.tableCol}>
-                                                <Text style={styles.tableCell}>{item.categorie}</Text>
+                                                <Text style={styles.tableCell}>{item.montant}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.devise && item.devise.devise}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.homme}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.femme}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.enfant}</Text>
+                                            </View>
+                                            <View style={styles.tableCol}>
+                                                <Text style={styles.tableCell}>{item.effectif}</Text>
                                             </View>
                                         </View>
                                     </>

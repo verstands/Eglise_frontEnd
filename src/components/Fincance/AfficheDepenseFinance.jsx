@@ -10,25 +10,31 @@ const AfficheDepenseFinance = () => {
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
-
     return (
         <>
             <div class="card flex-fill">
                 <div class="card-header">
                     <h1 class="text-center">Liste des depenses</h1>
                     <hr />
-                    <Link to="/DepenseFinance" class="btn-success btn"><span class="">Ajouter une depense</span></Link>
-                    <br />
-                    <br />
+                    <div className="row">
                     <div className="col-md-6">
-                        <input 
-                            type="text" 
-                            placeholder="Recherche" 
-                            className="form-control" 
+                        <Link to="/AddNouveau">&nbsp;&nbsp;<span class="btn-lg btn-success">
+                            <i className="fa fa-add"></i>
+                        </span></Link>
+                        <Link to="/NouveauneePdf">&nbsp;&nbsp;<span class="btn-lg btn-success">
+                            <i className="fa fa-print"></i>
+                        </span></Link>
+                    </div>
+                    <div className="col-md-6">
+                        <input
+                            type="text"
+                            placeholder="Recherche..."
+                            className="form-control"
                             value={searchTerm}
                             onChange={handleSearch}
                         />
                     </div>
+                </div>
                 </div>
                 <table class="table table-hover my-0">
                     <thead>
@@ -50,7 +56,6 @@ const AfficheDepenseFinance = () => {
                                     return false; // ignore non-string values
                                 }
                                 return data.created_at.toLowerCase().includes(searchTerm.toLowerCase())
-                              
                             })
                             .map((data, index) => (
                                 <DepenseTableau
