@@ -2,18 +2,19 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { deleteMouvement } from '../../actions/Mouvement.action';
+import dateFormat from 'dateformat';
 
 
-const MouvementRapport = ({ mission,id,  membre, created_at }) => {
+const MouvementRapport = ({n, mission,id,  membre, created_at }) => {
     const dispatch = useDispatch();
-    let n = 1;
+
     return (
         <>
             <tr>
-                <td>{n++}</td>
+                <td>{n}</td>
+                <td class="d-none d-xl-table-cell">{mission && mission.mission}</td>
+                <td class="d-none d-xl-table-cell">{dateFormat(created_at, 'dd/mm/yyyy')}</td>
                 <td class="d-none d-xl-table-cell">{membre && membre.nom}</td>
-                <td class="d-none d-xl-table-cell">{id}</td>
-                <td class="d-none d-xl-table-cell">{created_at}</td>
             </tr>
         </>
     );

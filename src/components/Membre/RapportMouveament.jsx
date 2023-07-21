@@ -10,6 +10,7 @@ function RapportMouveament() {
     const mouvements = useSelector((state) => state.mouvementReducer);
     const [rapport, setrapport] = useState([]);
     const dispatch = useDispatch();
+    let n = 1;
 
     const handleRech = (e) => {
         e.preventDefault();
@@ -19,7 +20,8 @@ function RapportMouveament() {
 
         dispatch(addRapportMembreMouvement(du, au, type))
             .then((data) => {
-                setrapport(data.data);
+                setrapport(data);
+                alert(data);
             })
             .catch((error) => {
                 console.log(error);
@@ -64,13 +66,14 @@ function RapportMouveament() {
                     </tr>
                 </thead>
                 <tbody>
-                    {rapport.length === 0 ? (
+                    {Array.isArray(rapport) && rapport.length === 0 ? (
                         Array.isArray(mouvements) && mouvements.map((dataEnfant, indexEnfant) => (
                             <MouvementRapport
                                 membre={dataEnfant.membre}
                                 id={dataEnfant.id}
                                 mission={dataEnfant.mission}
                                 created_at={dataEnfant.created_at}
+                                n = {n++}
                                 key={indexEnfant}
                             />
                         ))
@@ -79,6 +82,7 @@ function RapportMouveament() {
                             <MouvementRapport
                                 membre={dataEnfant.membre}
                                 id={dataEnfant.id}
+                                n = {n++}
                                 mission={dataEnfant.mission}
                                 created_at={dataEnfant.created_at}
                                 key={indexEnfant}
