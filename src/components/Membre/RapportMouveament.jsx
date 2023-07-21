@@ -19,16 +19,13 @@ function RapportMouveament() {
         const du = form.current[0].value !== "" ? form.current[0].value : null;
         const au = form.current[1].value !== "" ? form.current[1].value : null;
         const type = form.current[2].value !== "" ? form.current[2].value : null;
-        alert(type)
-        /*dispatch(addRapportMembreMouvement(du, au, type))
+        dispatch(addRapportMembreMouvement(du, au, type))
             .then((data) => {
                 setrapport(data);
-                alert(data);
             })
             .catch((error) => {
                 console.log(error);
             });
-*/
     }
     return (
         <div class="card flex-fill">
