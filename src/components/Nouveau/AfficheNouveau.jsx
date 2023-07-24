@@ -64,7 +64,6 @@ const AfficheNouveau = () => {
                                     data.adresse.toLowerCase().includes(searchTerm.toLowerCase()) ||
                                     data.telephone.toLowerCase().includes(searchTerm.toLowerCase()) ||
                                     data.egliseprovenance.toLowerCase().includes(searchTerm.toLowerCase())
-
                             })
                             .map((data, index) => (
                                 <NouveauneTableau
