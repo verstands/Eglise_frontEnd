@@ -61,6 +61,13 @@ function ConsultationFinance() {
                             <i className='fa fa-print'></i>
                         </button>
                     </div>
+                    <div className="col-md-2">
+                        <select name="" className="form-control" id="">
+                            <option value="">Rapport Recette</option>
+                            <option value="">Rapport Global</option>
+                            <option value="">La Caisse</option>
+                        </select>
+                    </div>
                 </div>
             </form>
             <table class="table table-hover my-0">

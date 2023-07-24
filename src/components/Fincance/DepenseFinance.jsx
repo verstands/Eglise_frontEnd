@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import NavBar from "../NavBar";
 import NavOt from "../NavOt";
 import { useDispatch, useSelector } from "react-redux";
-import { addTypeDepense } from "../../actions/TypeDepenseAction";
+import { addTypeDepense, getTypeDepense } from "../../actions/TypeDepenseAction";
 
 
 const   DepenseFinance = () => {
@@ -23,7 +23,9 @@ const   DepenseFinance = () => {
             'pournous' : 1, 
         }
 
-        dispatch(addTypeDepense(data))
+        dispatch(addTypeDepense(data));
+        dispatch(getTypeDepense());
+        form.current.reset();
     }
     return (
         <div class="wrapper">
@@ -78,9 +80,7 @@ const   DepenseFinance = () => {
                                         <label htmlFor="">Beneficiaire</label>
                                         <textarea name="" id="" className="form-control" cols="40" rows="5"></textarea><br />
                                     </div>
-                                    <div className="col-md-4">
-                                        <input type="checkbox" placeholder="Nombre homme" />Pour nous
-                                    </div>
+                                    
                                     <div className="col-md-12">
                                         <button className="btn btn-primary">Enregistrer</button>
                                     </div>

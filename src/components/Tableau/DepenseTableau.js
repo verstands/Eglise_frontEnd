@@ -15,10 +15,15 @@ const DepenseTableau = ({date, caisse, depense, montant, devise, beneficiaire, i
             <td>{devise && devise.devise}</td>
             <td>{beneficiaire}</td>
             <td class="d-none d-md-table-cell">
-                <button class="badge bg-danger btn" onClick={() => dispatch(deleteDepense(id))}>
-                    <span class="badge bg-danger">Delete</span>
+                <button class="btn-lg bg-danger btn" onClick={() => dispatch(deleteDepense(id))}>
+                        <i className='fa fa-trash' style={{color: 'white'}}></i>
                 </button>&nbsp;
-                <Link to="/updatemembre" class="badge bg-success btn"><span class="badge bg-success">Update</span></Link>&nbsp;
+                <Link to="/updatemembre"  class="btn-lg bg-success btn" style={{color: 'white'}}>
+                    <i className='fa fa-edit'></i>
+                </Link>&nbsp;
+                <Link to="/updatemembre" title='fiche de depenses'  class="btn-lg bg-success btn" style={{color: 'white'}}>
+                    <i className='fa fa-credit-card'></i>
+                </Link>&nbsp;
             </td>
         </tr>
     )

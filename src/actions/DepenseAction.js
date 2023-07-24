@@ -27,7 +27,7 @@ export const getDepense = () => {
 export const deleteDepense = (id) => {
     return (dispatch) => {
         Swal.fire({
-            title: 'Êtes-vous sûr de vouloir supprimer ce Categorie ?',
+            title: 'Êtes-vous sûr de vouloir supprimer cette depense ?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Oui, supprimer',

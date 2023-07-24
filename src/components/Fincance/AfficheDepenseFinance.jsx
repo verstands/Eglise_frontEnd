@@ -18,7 +18,7 @@ const AfficheDepenseFinance = () => {
                     <hr />
                     <div className="row">
                     <div className="col-md-6">
-                        <Link to="/AddNouveau">&nbsp;&nbsp;<span class="btn-lg btn-success">
+                        <Link to="/DepenseFinance">&nbsp;&nbsp;<span class="btn-lg btn-success">
                             <i className="fa fa-add"></i>
                         </span></Link>
                         <Link to="/NouveauneePdf">&nbsp;&nbsp;<span class="btn-lg btn-success">
@@ -28,7 +28,7 @@ const AfficheDepenseFinance = () => {
                     <div className="col-md-6">
                         <input
                             type="text"
-                            placeholder="Recherche..."
+                            placeholder="Recherche  par date..."
                             className="form-control"
                             value={searchTerm}
                             onChange={handleSearch}
@@ -45,14 +45,13 @@ const AfficheDepenseFinance = () => {
                             <th>Montant</th>
                             <th>Devise</th>
                             <th>Beneficiaire</th>
-                            <th>Beneficiaire</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     {Array.isArray(type_depense) && type_depense
                             .filter((data) => {
-                                if (typeof data.montant !== 'string') {
+                                if (typeof data.created_at !== 'string') {
                                     return false; // ignore non-string values
                                 }
                                 return data.created_at.toLowerCase().includes(searchTerm.toLowerCase())

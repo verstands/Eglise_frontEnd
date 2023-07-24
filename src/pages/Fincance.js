@@ -38,16 +38,7 @@ const Finance = () => {
                                                 <span class="hidden-xs-down"><i class="fas fa-exchange"></i>Consultation</span></a
                                             >
                                         </li>
-                                        <li class="nav-item">
-                                            <a
-                                                class="nav-link"
-                                                data-bs-toggle="tab"
-                                                href="#affecte"
-                                                role="tab"
-                                            ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-exchange"></i>Imprimer</span></a
-                                            >
-                                        </li>
+    
                                         <li class="nav-item">
                                             <a
                                                 class="nav-link"
