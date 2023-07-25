@@ -6,6 +6,7 @@ const AddMateriel = () => {
     const form = useRef();
     const devise = useSelector((state) => state.deviseReducer);
     const departement = useSelector((state) => state.deparmentReduceur);
+    const categorie_materiel = useSelector((state) => state.categorieMaterielReducer)
     const dispatch = useDispatch();
 
     const handleSave = async (e) => {
@@ -39,7 +40,13 @@ const AddMateriel = () => {
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="">Categorie</label>
-                            <input type="text" className="form-control" />
+                            <select name="" className="form-control" id="">
+                                {
+                                    Array.isArray(categorie_materiel) && categorie_materiel.map((ds) => {
+                                        return <option value={ds.id} key={ds.id}>{ds.nom}</option>
+                                    })
+                                }
+                            </select>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="">Nombre</label>
