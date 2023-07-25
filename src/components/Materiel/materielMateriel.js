@@ -17,13 +17,13 @@ const MaterielMateriel = () => {
             </div>
             <hr />
             <div className="col-md-5">
-            <input 
-                            type="text" 
-                            placeholder="Recherche departement" 
-                            className="form-control" 
-                            value={searchTerm}
-                            onChange={handleSearch}
-                        />
+                <input
+                    type="text"
+                    placeholder="Recherche materiel par nom"
+                    className="form-control"
+                    value={searchTerm}
+                    onChange={handleSearch}
+                />
             </div>
             <table class="table table-hover my-0">
                 <thead>
@@ -38,27 +38,27 @@ const MaterielMateriel = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {Array.isArray(materiel) && materiel
-                            .filter((data) => {
-                                if (typeof data.materiel !== 'string') {
-                                    return false; // ignore non-string values
-                                }
-                                return data.materiel.toLowerCase().includes(searchTerm.toLowerCase())
-                              
-                            })
-                            .map((data, index) => (
-                                <MaterielTableau
-                                    id={data.id}
-                                    materiel={data.materiel}
-                                    categorie_id={data.categorie_id}
-                                    stock={data.stock}
-                                    cout={data.cout}
-                                    devide_id={data.devide_id}
-                                    id_departement={data.id_departement}
-                                    key={index}
-                                />
-                            ))
-                        }
+                    {Array.isArray(materiel) && materiel
+                        .filter((data) => {
+                            if (typeof data.materiel !== 'string') {
+                                return false; // ignore non-string values
+                            }
+                            return data.materiel.toLowerCase().includes(searchTerm.toLowerCase())
+
+                        })
+                        .map((data, index) => (
+                            <MaterielTableau
+                                id={data.id}
+                                materiel={data.materiel}
+                                categorie_id={data.categorie_id}
+                                stock={data.stock}
+                                cout={data.cout}
+                                devide_id={data.devide_id}
+                                id_departement={data.id_departement}
+                                key={index}
+                            />
+                        ))
+                    }
                 </tbody>
             </table>
         </div>
