@@ -64,7 +64,6 @@ const AfficheDepenseFinance = () => {
                                     depense={data.depense}
                                     montant={data.montant}
                                     devise={data.devise}
-                                    beneficiaire={data.beneficiaire}
                                     key={index}
                                 />
                             ))

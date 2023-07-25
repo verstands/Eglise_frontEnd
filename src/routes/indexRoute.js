@@ -34,6 +34,7 @@ import RapportNouveauPdf from '../components/Nouveau/RappportNouveauPdf';
 import RecetteFinancePdf from '../components/Fincance/RecetteFinancePdf';
 import ConsultationFinancePdf from '../components/Fincance/ConsultationFinancePdf';
 import CarteDepense from '../components/Fincance/CarteDepense';
+import RapportTypeDepensePdf from '../components/Fincance/RapportTypeFinancePdf';
 
 class IndexRoute extends Component {
     render(){
@@ -71,6 +72,7 @@ class IndexRoute extends Component {
                 <Route path="/RecetteFinancePdf"  element={<RecetteFinancePdf />} />
                 <Route path="/ConsultationFinancePdf"  element={<ConsultationFinancePdf />} />
                 <Route path="/CarteDepense/:id"  element={<CarteDepense />} />
+                <Route path="/RapportTypeDepensePdf"  element={<RapportTypeDepensePdf />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );
