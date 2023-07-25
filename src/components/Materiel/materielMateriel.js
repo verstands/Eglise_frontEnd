@@ -16,14 +16,21 @@ const MaterielMateriel = () => {
                 <h1 class="text-center">Liste des materiels</h1>
             </div>
             <hr />
-            <div className="col-md-5">
-                <input
-                    type="text"
-                    placeholder="Recherche materiel par nom"
-                    className="form-control"
-                    value={searchTerm}
-                    onChange={handleSearch}
-                />
+            <div className="row">
+                <div className="col-md-6">
+                    <Link to="/MaterielPdf">&nbsp;&nbsp;<span class="btn-lg btn-success">
+                        <i className="fa fa-print"></i>
+                    </span></Link>
+                </div>
+                <div className="col-md-5">
+                    <input
+                        type="text"
+                        placeholder="Recherche materiel par nom"
+                        className="form-control"
+                        value={searchTerm}
+                        onChange={handleSearch}
+                    />
+                </div>
             </div>
             <table class="table table-hover my-0">
                 <thead>
