@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import NavOt from '../components/NavOt';
 import MaterielMateriel from '../components/Materiel/materielMateriel';
 import AddMateriel from '../components/Materiel/AddMateriel';
+import MaterielPdfId from '../components/Materiel/MaterielPdfId';
 
 const Materiel = () => {
   return (
@@ -37,6 +38,16 @@ const Materiel = () => {
                                                 <span class="hidden-xs-down"><i class="fas fa-add"></i> Ajouter un materiel</span></a
                                             >
                                         </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                data-bs-toggle="tab"
+                                                href="#conge"
+                                                role="tab"
+                                            ><span class="hidden-sm-up"></span>
+                                                <span class="hidden-xs-down"><i class="fas fa-add"></i> Rappor materiel</span></a
+                                            >
+                                        </li>
                                     </ul>
                                     <div class="tab-content tabcontent-border">
                                         <div class="tab-pane active" id="home" role="tabpanel">
@@ -48,7 +59,7 @@ const Materiel = () => {
                                             <AddMateriel />
                                         </div>
                                         <div class="tab-pane p-20" id="conge" role="tabpanel">
-                                            
+                                            <MaterielPdfId />
                                         </div>
                                         <div class="tab-pane p-20" id="mouvementM" role="tabpanel">
                                             

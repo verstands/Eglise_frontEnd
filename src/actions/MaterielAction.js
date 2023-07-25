@@ -97,3 +97,20 @@ export const deleteMateriel = (id) => {
         });
     };
 };
+
+export const addRapportMateriel = (du, au) => {
+    return (dispatch) => {
+        return axios.get(`${url}RapportMateriel/${du}/${au}`,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                return response.data.data;
+            }).catch((error) => {
+                alert(error);
+            })
+    }
+}
