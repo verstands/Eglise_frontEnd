@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import NavOt from "../components/NavOt";
 import AffichePlannig from "../components/Plannig/AffichePlannig";
+import Addplannig from "../components/Plannig/Addplannig";
 const Plannig = () => {
     return (
         <div class="wrapper">
@@ -43,7 +44,7 @@ const Plannig = () => {
                                             </div>
                                         </div>
                                         <div class="tab-pane p-20" id="addsxx" role="tabpanel">
-                                            
+                                           
                                         </div>
                                     </div>
                                 </div>

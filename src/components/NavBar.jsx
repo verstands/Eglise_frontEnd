@@ -39,13 +39,6 @@ const NavBar = () => {
                                     </span>
                             </Link>
                         </li>
-
-                        <li className="sidebar-item">
-                            <Link className="sidebar-link" to="/Paie">
-                                <i className="align-middle" data-feather="square"></i> <span className="align-middle">Gestion paie</span>
-                            </Link>
-                        </li>
-
                         <li className="sidebar-item">
                             <Link className="sidebar-link" to="/Planning">
                                 <i className="align-middle" data-feather="square"></i> <span className="align-middle">Gestion planning</span>
