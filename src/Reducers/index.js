@@ -18,6 +18,7 @@ import affecationReducer from "./AffectaionReducer";
 import TypeMouvementReducer from "./TypeMouvementReducer";
 import PlannigReducer from "./PlanningReducer";
 import categorieMaterielReducer from "./CategorieMaterielReducer";
+import ProfilReducer from "./ProfilReducer";
 
 export default combineReducers({
     membreReducer,
@@ -38,6 +39,7 @@ export default combineReducers({
     affecationReducer,
     TypeMouvementReducer,
     PlannigReducer,
-    categorieMaterielReducer
+    categorieMaterielReducer,
+    ProfilReducer
     
 });
