@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import NavBar from '../NavBar';
 import NavOt from '../NavOt';
 import Checkbox from '@mui/material/Checkbox';
-import { addCommunication } from '../../actions/CommunicationAction';
+import { addCommunication, getCommunication } from '../../actions/CommunicationAction';
 function AddCommunication() {
     const form = useRef();
     const dispatch = useDispatch();
@@ -24,9 +24,11 @@ function AddCommunication() {
                 Departement : rowId,
                 obejet : form.current[0].value,
                 piece : 1,
-                text : form.current[2].value
+                text : form.current[2].value,
+                type_message : form.current[3].value,
            } 
            dispatch(addCommunication(data))
+           dispatch(getCommunication())
         });
         form.current.reset();
     }
@@ -84,6 +86,13 @@ function AddCommunication() {
                              <div className="col-md-12">
                                  <label htmlFor="">Text</label>
                                  <textarea name="" className="form-control" id="" cols="30" rows="5"></textarea>
+                             </div>
+                             <div className="col-md-12">
+                                 <label htmlFor="">Type de message</label>
+                                <select name="" className='form-control' id="">
+                                    <option value="SMS">Sms</option>
+                                    <option value="EMAIL">Email</option>
+                                </select>
                              </div>
                              <div className="col-md-12">
                              <br />

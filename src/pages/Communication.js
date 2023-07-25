@@ -24,7 +24,7 @@ const Communication = () => {
                                                 href="#home"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Communication</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Liste de communications</span></a
                                             >
                                         </li>
                                         <li class="nav-item">
@@ -34,7 +34,7 @@ const Communication = () => {
                                                 href="#adds"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Liste de communication</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Envoyer un comminiquer</span></a
                                             >
                                         </li>
                                     </ul>

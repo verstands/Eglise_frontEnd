@@ -23,6 +23,7 @@ function RapportNouveau() {
         dispatch(addRapportNouveau(du, au))
             .then((data) => {
                 setrapport(data);
+
             })
             .catch((error) => {
                 console.log(error);

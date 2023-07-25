@@ -18,9 +18,6 @@ const AfficheCommunication = () => {
                 </div>
                 <hr />
                 <div className="row">
-                    <div className="col-md-12">
-                        <button className="btn btn-primary">imprimer</button>
-                    </div>
                     <br />
                     <br />
                     <div className="col-md-3">
@@ -39,6 +36,8 @@ const AfficheCommunication = () => {
                             <th>Departemenr</th>
                             <th>Objet</th>
                             <th>Text</th>
+                            <th>Type de message</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -53,10 +52,7 @@ const AfficheCommunication = () => {
                             })
                             .map((data, index) => (
                                 <TableauCommunication
-                                    Departement={data.Departement}
-                                    obejet={data.obejet}
                                     id={data.id}
-                                    text={data.text}
                                     key={index}
                                 />
                             ))
