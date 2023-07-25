@@ -26,16 +26,6 @@ const Plannig = () => {
                                                 <span class="hidden-xs-down"><i class="fas fa-calendar"></i> Programme</span></a
                                             >
                                         </li>
-                                        <li class="nav-item">
-                                            <a
-                                                class="nav-link"
-                                                data-bs-toggle="tab"
-                                                href="#addsxx"
-                                                role="tab"
-                                            ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-add"></i> Ajouter un plannig</span></a
-                                            >
-                                        </li>
                                     </ul>
                                     <div class="tab-content tabcontent-border">
                                         <div class="tab-pane active" id="home" role="tabpanel">

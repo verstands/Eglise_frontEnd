@@ -23,6 +23,7 @@ import { getCommunication } from './actions/CommunicationAction';
 import { getMateriel } from './actions/MaterielAction';
 import { getMembreAffecter } from './actions/Affecter.action';
 import { getTypeMouvement } from './actions/TypeMouvementAction';
+import { getplanning } from './actions/PlanningAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -46,6 +47,7 @@ store.dispatch(getCommunication())
 store.dispatch(getMateriel())
 store.dispatch(getMembreAffecter())
 store.dispatch(getTypeMouvement())
+store.dispatch(getplanning())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

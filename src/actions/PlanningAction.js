@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 export const GET_PLANNING = "GET_PLANNING";
 export const DELETE_PLANNING = "DELETE_PLANNING";
+export const ADD_PLANNING = "ADD_PLANNING";
 const url = "http://localhost:5000/api/";
 
 
@@ -57,3 +58,47 @@ export const deletePlanning = (id) => {
         });
     };
 };
+
+export const addPlanning = (postData) => {
+    return (dispatch) => {
+        return axios.post(`${url}planning`, postData,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                dispatch({ type: ADD_PLANNING, payload: postData })
+                Swal.fire({
+                    icon: 'success',
+                    text: `${response.data.message}`,
+                    confirmButtonText: 'OK'
+                })
+            }).catch((error) => {
+
+                if (error.response && error.response.status === 422) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
+                } else if (error.response.status === 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Erreur de la connexion !!!',
+                        confirmButtonText: 'OK'
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `${error.response.data.message}`,
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
+    }
+}
+
+export const updatePlanning =() =>{
+
+}
