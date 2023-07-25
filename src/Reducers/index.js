@@ -17,6 +17,7 @@ import mouvementReducer from "./Mouvement.reducer";
 import affecationReducer from "./AffectaionReducer";
 import TypeMouvementReducer from "./TypeMouvementReducer";
 import PlannigReducer from "./PlanningReducer";
+import categorieMaterielReducer from "./CategorieMaterielReducer";
 
 export default combineReducers({
     membreReducer,
@@ -36,6 +37,7 @@ export default combineReducers({
     materielReducer,
     affecationReducer,
     TypeMouvementReducer,
-    PlannigReducer
+    PlannigReducer,
+    categorieMaterielReducer
     
 });
