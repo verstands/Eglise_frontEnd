@@ -45,12 +45,36 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginBottom: 16
     },
+    eglise: {
+        fontSize: 17,
+        marginBottom: 16,
+        marginTop: 5,
+        textAlign : 'center',
+        fontWeight : "bold"
+    },
+    subtitles : {
+        fontSize: 17,
+        marginBottom: 16,
+        textAlign : 'center'
+    },
     text: {
         fontSize: 16,
         marginBottom: 8
     },
-    image : {
-
+    nom_carte : {
+        FontSize: 24,
+        marginBottom: 16,
+        marginTop: 16,
+        textAlign : "center",
+    },
+    nom_cartes : {
+        textAlign : "center",
+        marginTop: 10,
+        borderTop : "1px solid black",
+    },
+    nomUser : {
+        marginTop: 16,
+        fontSize : 15
     }
     
 
@@ -75,19 +99,22 @@ const MembrePdfId = () => {
             {/* Start of the document*/}
             <Document>
                 {/*render a single page*/}
-                <Page size={{ width: 500, height: 200 }} style={styles.page} >
+                <Page size={{ width: 400, height: 250 }} style={styles.page} >
                     <View style={styles.Titre}>
                         <div className='row'>
+                            <center>
+                                    <Text style={styles.subtitles}> Republique Democratique Du Congo</Text>
+                                    <Text style={styles.eglise}>Nom de d'eglise</Text>
+                                    <Text style={styles.nom_carte}>CARTE DE MEMBRE</Text>
+                                    <Text style={styles.nom_cartes}></Text>
+                            </center>
+                            <hr />
                             <div className="col-md-6">
-                                <Text style={styles.title}>{membreid.prenom} {membreid.nom}</Text>
-                                <Text style={styles.subtitle}>Departement</Text>
+                                <Text style={styles.text}>Noms : {membreid.prenom} {membreid.nom}</Text>
+                                <Text style={styles.text}>Departement : </Text>
                                 <Text style={styles.text}>Adresse: {membreid.adresse}</Text>
-                                <Text style={styles.text}>Etat civil: {membreid.etatcivil}</Text>
                                 <Text style={styles.text}>Profession: {membreid.profession} </Text>
                                 <Text style={styles.text}>Sexe: {membreid.sexe} </Text>
-                                <Text style={styles.text}>Téléphone: {membreid.telephone}</Text>
-                                <Text style={styles.text}>Email: {membreid.email}</Text>
-                                <Text style={styles.text}>Date naissance : {membreid.datenaissance}</Text>
                             </div>
                             <div className='col-md-6'>
                               <Text style={styles.image}><i className='fa fa-user'></i></Text> 

@@ -25,7 +25,7 @@ const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
                         <i className="fa-solid fa-info" style={{color: 'white'}}></i>
                     </Link>&nbsp;
                     <Link to={`/MembrePdfId/${id}`} title='Detail' className="btn-lg bg-success btn">
-                        <i className="fa-solid fa-credit-card" style={{color: 'white'}}></i>
+                        <i className="fa-solid fa-user-circlegit" style={{color: 'white'}}></i>
                     </Link>&nbsp;
                     <Link to={`/MembrePdfIdFiche/${id}`} title='Detail' className="btn-lg bg-success btn">
                         <i className="fa-solid fa-credit-card" style={{color: 'white'}}></i>
