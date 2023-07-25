@@ -62,13 +62,6 @@ const NavBar = () => {
                                 <i className="align-middle" data-feather="square"></i> <span className="align-middle">Gestion materiel</span>
                             </Link>
                         </li>
-
-                        <li className="sidebar-item">
-                            <Link className="sidebar-link" to="/Discipline">
-                                <i className="align-middle" data-feather="square"></i> <span className="align-middle">Gestion discipline</span>
-                            </Link>
-                        </li>
-
                         <li className="sidebar-item">
                             <Link className="sidebar-link" to="/Parametre">
                                 <i className="align-middle" data-feather="square"></i> <span className="align-middle">Parametre</span>
@@ -77,12 +70,10 @@ const NavBar = () => {
                     </ul>
                     <div className="sidebar-cta">
                         <div className="sidebar-cta-content">
-                            <strong className="d-inline-block mb-2">Upgrade to Pro</strong>
-                            <div className="mb-3 text-sm">
-                                Are you looking for more components? Check out our premium version.
-                            </div>
+                            <strong className="d-inline-block mb-2">Se decoonecter</strong>
+                            
                             <div className="d-grid">
-                                <a href="upgrade-to-pro.html" className="btn btn-primary">Upgrade to Pro</a>
+                                <a href="upgrade-to-pro.html" className="btn btn-primary"><i className="fa fa-sign-out"></i></a>
                             </div>
                         </div>
                     </div>

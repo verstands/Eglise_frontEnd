@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
 import NavOt from '../components/NavOt';
+import DisciplineAffichage from '../components/Discipline/DisciplineAffichage';
 
 const Discipline = () => {
   return (
@@ -49,7 +50,7 @@ const Discipline = () => {
                                     <div class="tab-content tabcontent-border">
                                         <div class="tab-pane active" id="home" role="tabpanel">
                                             <div class="p-20">
-                                            
+                                                <DisciplineAffichage />
                                             </div>
                                         </div>
                                         <div class="tab-pane p-20" id="adds" role="tabpanel">
