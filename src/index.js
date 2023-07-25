@@ -24,6 +24,7 @@ import { getMateriel } from './actions/MaterielAction';
 import { getMembreAffecter } from './actions/Affecter.action';
 import { getTypeMouvement } from './actions/TypeMouvementAction';
 import { getplanning } from './actions/PlanningAction';
+import { getCategorieMateriel } from './actions/CategorieMaterielAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -48,6 +49,7 @@ store.dispatch(getMateriel())
 store.dispatch(getMembreAffecter())
 store.dispatch(getTypeMouvement())
 store.dispatch(getplanning())
+store.dispatch(getCategorieMateriel())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
