@@ -56,7 +56,7 @@ const Finance = () => {
                                                 href="#inventaire"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-exchange"></i>Inventaire</span></a
+                                                <span class="hidden-xs-down"><i class="fas fa-exchange"></i>Consultation depense</span></a
                                             >
                                         </li>
                                     </ul>

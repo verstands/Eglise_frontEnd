@@ -21,7 +21,7 @@ const DepenseTableau = ({date, caisse, depense, montant, devise, beneficiaire, i
                 <Link to="/updatemembre"  class="btn-lg bg-success btn" style={{color: 'white'}}>
                     <i className='fa fa-edit'></i>
                 </Link>&nbsp;
-                <Link to="/updatemembre" title='fiche de depenses'  class="btn-lg bg-success btn" style={{color: 'white'}}>
+                <Link to={`/CarteDepense/${id}`} title='fiche de depenses'  class="btn-lg bg-success btn" style={{color: 'white'}}>
                     <i className='fa fa-credit-card'></i>
                 </Link>&nbsp;
             </td>

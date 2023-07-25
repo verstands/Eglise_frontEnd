@@ -9,18 +9,18 @@ const url = "http://localhost:5000/api/";
 
 
 export const getDepense = () => {
-    return(dispatch) => {
-        return axios.get(`${url}depenses`,{
+    return (dispatch) => {
+        return axios.get(`${url}depenses`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: Token()
             }
         }).then((response) => {
-                dispatch({type : GET_DEPENSE, payload : response.data.data})
-            }).catch((error) => {
-                
-            })
+            dispatch({ type: GET_DEPENSE, payload: response.data.data })
+        }).catch((error) => {
+
+        })
     }
 }
 
@@ -57,3 +57,37 @@ export const deleteDepense = (id) => {
         });
     };
 };
+
+export const getDepenseId = (id) => {
+
+    return axios.get(`${url}type_depense/${id}`, {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: Token()
+        }
+    }).then((response) => {
+        return response.data.data;
+    }).catch((error) => {
+
+    })
+
+}
+
+
+export const addRapportTypeDepnse= (du, au) => {
+    return (dispatch) => {
+        return axios.get(`${url}RapportTypeDepnse/${du}/${au}`,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                return response.data.data;
+            }).catch((error) => {
+                alert(error);
+            })
+    }
+}
