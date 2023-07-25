@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const NavOt = () => {
+    const profil = useSelector((state) => state.ProfilReducer);
     return (
         <nav class="navbar navbar-expand navbar-light navbar-bg">
             <a class="sidebar-toggle js-sidebar-toggle">
@@ -163,9 +165,11 @@ const NavOt = () => {
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
                             data-bs-toggle="dropdown">
                             <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"
-                                alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                                alt="Charles Hall" /> <span class="text-dark">{profil.nom + " " + profil.postnom}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="#">{profil.email}</a>
+                            <hr />
                             <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"
                                 data-feather="user"></i> Profile</a>
                             <a class="dropdown-item" href="#">Se deconnecter</a>

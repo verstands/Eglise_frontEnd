@@ -25,6 +25,7 @@ import { getMembreAffecter } from './actions/Affecter.action';
 import { getTypeMouvement } from './actions/TypeMouvementAction';
 import { getplanning } from './actions/PlanningAction';
 import { getCategorieMateriel } from './actions/CategorieMaterielAction';
+import { getProfil } from './actions/Profil';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -50,6 +51,7 @@ store.dispatch(getMembreAffecter())
 store.dispatch(getTypeMouvement())
 store.dispatch(getplanning())
 store.dispatch(getCategorieMateriel())
+store.dispatch(getProfil())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
