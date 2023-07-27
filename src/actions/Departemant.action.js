@@ -19,7 +19,7 @@ export const getDepartement = () => {
         }).then((response) => {
             dispatch({ type: GET_DEPARTEMENTS, payload: response.data.data })
         }).catch((error) => {
-            alert(error)
+            
         })
     }
 }

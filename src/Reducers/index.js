@@ -19,6 +19,7 @@ import TypeMouvementReducer from "./TypeMouvementReducer";
 import PlannigReducer from "./PlanningReducer";
 import categorieMaterielReducer from "./CategorieMaterielReducer";
 import ProfilReducer from "./ProfilReducer";
+import menuReducer from "./MenuReducer";
 
 export default combineReducers({
     membreReducer,
@@ -40,6 +41,7 @@ export default combineReducers({
     TypeMouvementReducer,
     PlannigReducer,
     categorieMaterielReducer,
-    ProfilReducer
+    ProfilReducer,
+    menuReducer
     
 });

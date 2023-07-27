@@ -110,7 +110,7 @@ export const addRapportConsultationFinance = (du, au) => {
             }).then((response) => {
                 return response.data.data;
             }).catch((error) => {
-                alert(error);
+                alert(error + "finance");
             })
     }
 }

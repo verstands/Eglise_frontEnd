@@ -125,7 +125,7 @@ export const addRapportNouveau = (du, au) => {
             }).then((response) => {
                 return response.data.data;
             }).catch((error) => {
-                alert(error);
+                alert(error + "nouverau");
             })
     }
 }

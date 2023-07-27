@@ -13,6 +13,7 @@ const Login = () => {
 
     const handleConnecter = (e) => {
         e.preventDefault();
+        setloading(true);
         axios.post(`${url}login`,
             {
                 email: email,
@@ -20,8 +21,11 @@ const Login = () => {
             }
         ).then((response) => {
             let token = JSON.stringify(response.data.token);
+            let departement = JSON.stringify(response.data.departement);
             let tokenT = token.substring(1, token.length - 1);
+            let departementT = departement.substring(1, token.length - 1);
             localStorage.setItem("token", tokenT)
+            localStorage.setItem("departement", departementT)
             navigate('/dashboad')
             window.location.reload();
         }).catch((error) => {
@@ -52,8 +56,10 @@ const Login = () => {
                     title: 'Service non trouvée !!!',
                     text: 'Service non trouvée !!!',
                 })
-                setloading(false)
+                
             }
+        }).finally(() => {
+            setloading(false); // définir loading à false après la fin de l'appel API
         })
     }
     return (

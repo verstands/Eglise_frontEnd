@@ -87,7 +87,7 @@ export const addRapportTypeDepnse= (du, au) => {
             }).then((response) => {
                 return response.data.data;
             }).catch((error) => {
-                alert(error);
+                alert(error + "depense");
             })
     }
 }

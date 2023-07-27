@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import NavOt from '../components/NavOt'
+import MembreStatistique from '../components/Statistique/MembreStatistique'
 
 const Statistique = () => {
   return (
@@ -22,14 +23,14 @@ const Statistique = () => {
                                         href="#home"
                                         role="tab"
                                     ><span class="hidden-sm-up"></span>
-                                        <span class="hidden-xs-down"><i class="fas fa-calendar"></i> Membres</span></a
+                                        <span class="hidden-xs-down"><i class="fas fa-calendar"></i> Membres Statistique</span></a
                                     >
                                 </li>
                             </ul>
                             <div class="tab-content tabcontent-border">
                                 <div class="tab-pane active" id="home" role="tabpanel">
                                     <div class="p-20">
-                                    
+                                        <MembreStatistique />
                                     </div>
                                 </div>
                                 <div class="tab-pane p-20" id="addsxx" role="tabpanel">

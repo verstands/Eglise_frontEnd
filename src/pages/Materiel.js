@@ -6,8 +6,8 @@ import AddMateriel from '../components/Materiel/AddMateriel';
 import MaterielPdfId from '../components/Materiel/MaterielPdfId';
 
 const Materiel = () => {
-  return (
-    <div class="wrapper">
+    return (
+        <div class="wrapper">
             <NavBar />
             <div class="main">
                 <NavOt />
@@ -62,10 +62,10 @@ const Materiel = () => {
                                             <MaterielPdfId />
                                         </div>
                                         <div class="tab-pane p-20" id="mouvementM" role="tabpanel">
-                                            
+
                                         </div>
                                         <div class="tab-pane p-20" id="mouvementM" role="tabpanel">
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@ const Materiel = () => {
                 </main>
             </div>
         </div>
-  )
+    )
 }
 
 export default Materiel
