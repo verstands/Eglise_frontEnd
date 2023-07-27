@@ -75,7 +75,6 @@ function RapportTypeDepensePdf(props) {
                                 <Text>Image                                                                           </Text>
                             </div>
                             <div className="col-md-6">
-                                <Text style={{ fontSize: 10 }}>LOGinSmart</Text>
                                 <Text style={{ fontSize: 10 }}>Kinshasa/Gombe</Text>
                                 <Text style={{ fontSize: 10 }}>Republique Democratique du Congo</Text>
                             </div>

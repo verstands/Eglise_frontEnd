@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     },
     table: { display: "table", width: "auto", borderStyle: "solid", borderColor: "#bfbfbf", borderWidth: 1, borderRightWidth: 0, borderBottomWidth: 0 },
     tableRow: { margin: "auto", flexDirection: "row", fontSize: 1 },
-    tableColHeader: { width: "9%", borderStyle: "solid", borderColor: "#bfbfbf", borderBottomColor: "#000", borderWidth: 1, backgroundColor: "#f0f0f0" },
-    tableCol: { width: "9%", borderStyle: "solid", borderColor: "#bfbfbf", borderBottomWidth: 1 },
+    tableColHeader: { width: "11%", borderStyle: "solid", borderColor: "#bfbfbf", borderBottomColor: "#000", borderWidth: 1, backgroundColor: "#f0f0f0" },
+    tableCol: { width: "11%", borderStyle: "solid", borderColor: "#bfbfbf", borderBottomWidth: 1 },
     tableCellHeader: { margin: 4, fontSize: 8, fontWeight: 'bold' },
     tableCell: { margin: 1, fontSize: 9 },
     tableRow2: { margin: "auto", flexDirection: "row", fontSize: 1 },
@@ -75,7 +75,6 @@ function ConsultationFinancePdf() {
                                 <Text>Image                                                                           </Text>
                             </div>
                             <div className="col-md-6">
-                                <Text style={{ fontSize: 10 }}>LOGinSmart</Text>
                                 <Text style={{ fontSize: 10 }}>Kinshasa/Gombe</Text>
                                 <Text style={{ fontSize: 10 }}>Republique Democratique du Congo</Text>
                             </div>
@@ -83,7 +82,7 @@ function ConsultationFinancePdf() {
                     </View>
                     <View style={styles.Titre}>
                         <div className="text-center">
-                            <Text style={{ fontSize: 10, fontWeight: "bold" }}>RESULTATS DE RECHERCHE POUR PRELEVEMENTS VEHICULES</Text>
+                            <Text style={{ fontSize: 10, fontWeight: "bold" }}>RAPPORT DES RECETTES DU AU</Text>
                         </div>
                     </View>
                     <View style={styles.body}>

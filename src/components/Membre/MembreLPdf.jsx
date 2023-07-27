@@ -13,11 +13,9 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 10,
     },
-    Titre: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1,
-        height: '1%'
+    TitreFiche: {
+        fontSize : 20,
+        textAlign : "center"
     },
     body: {
         margin: 10,
@@ -71,36 +69,31 @@ const MembrePdfIdFiche = () => {
             {/* Start of the document*/}
             <Document>
                 {/*render a single page*/}
-                <Page size="A4" style={styles.page} >
-                    <View style={styles.section}>
+                <Page size="A4" style={styles.pages} >
+                    <View style={styles.sections}>
                         <div className="row">
                             <div className="col-md-6">
-                                <Text>Image</Text>
-                            </div>
-                            <div className="col-md-6">
-                                <Text style={{ fontSize: 10 }}>LOGinSmart</Text>
-                                <Text style={{ fontSize: 10 }}>Kinshasa/Gombe</Text>
-                                <Text style={{ fontSize: 10 }}>Republique Democratique du Congo</Text>
+                            <Image src="./img/user.png" style={{ width: "10%", height: "10%" }} />
+                            <Text style={{textAlign : "right"}}>27/07/2023</Text>
                             </div>
                         </div>
                     </View>
-                    <View style={styles.Titre}>
+                    <View style={styles.TitreFiche}>
                         <div className="text-center">
-                            <Text style={{ fontSize: 10, fontWeight: "bold", textAlign : "center" }}>FICHE D'IDENTIFICATION DU MEMBRE</Text>
+                            <Text style={{ fontSize: 15, fontWeight: "bold", textAlign : "center" }}>FICHE D'IDENTIFICATION DU MEMBRE</Text>
                         </div>
                     </View>
-                    <View style={styles.Titre}>
+                    <View style={styles.Titres}>
                         <div className='row'>
                             <div className="col-md-6">
-                                <Text style={styles.title}>{membreid.prenom} {membreid.nom}</Text>
-                                <Text style={styles.subtitle}>Departement</Text>
-                                <Text style={styles.text}>Adresse: {membreid.adresse}</Text>
-                                <Text style={styles.text}>Etat civil: {membreid.etatcivil}</Text>
-                                <Text style={styles.text}>Profession: {membreid.profession} </Text>
-                                <Text style={styles.text}>Sexe: {membreid.sexe} </Text>
-                                <Text style={styles.text}>Téléphone: {membreid.telephone}</Text>
-                                <Text style={styles.text}>Email: {membreid.email}</Text>
-                                <Text style={styles.text}>Date naissance : {membreid.datenaissance}</Text>
+                                <Text style={{marginLeft : 150, marginTop : 50}}>Noms :                             {membreid.prenom} {membreid.nom}</Text>
+                                <Text style={{marginLeft : 150}}>Adresse:                          {membreid.adresse}</Text>
+                                <Text style={{marginLeft : 150}}>Etat civil:                          {membreid.etatcivil}</Text>
+                                <Text style={{marginLeft : 150}}>Profession:                      {membreid.profession} </Text>
+                                <Text style={{marginLeft : 150}}>Sexe:                               {membreid.sexe} </Text>
+                                <Text style={{marginLeft : 150}}>Téléphone:                      {membreid.telephone}</Text>
+                                <Text style={{marginLeft : 150}}>Email:                             {membreid.email}</Text>
+                                <Text style={{marginLeft : 150}}>Date naissance :             {membreid.datenaissance}</Text>
                             </div>
                             <div className='col-md-6'>
                                 <Text style={styles.image}><i className='fa fa-user'></i></Text>
