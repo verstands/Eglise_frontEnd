@@ -24,11 +24,9 @@ const TableauMembre = ({ id, nom, postnom, prenom, email, telephone }) => {
                     <Link to={`/detailmembre/${id}`} title='Detail' className="btn-lg bg-success btn">
                         <i className="fa-solid fa-info" style={{color: 'white'}}></i>
                     </Link>&nbsp;
-<<<<<<< HEAD
-                    <Link to={`/MembrePdfId/${id}`} title='Carte membre' className="btn-lg bg-success btn">
-=======
+                    <Link to={`/MembrePdfId/${id}`} title='Carte membre' className="btn-lg bg-success btn"></Link>
                     <Link to={`/MembrePdfId/${id}`} title='Detail' className="btn-lg bg-success btn">
->>>>>>> ea2a347e756db9cdaede86fe7df61f1bd99a9332
+
                         <i className="fa-solid fa-user-circle" style={{color: 'white'}}></i>
                     </Link>&nbsp;
                     <Link to={`/MembrePdfIdFiche/${id}`} title='Fiche membre' className="btn-lg bg-success btn">
