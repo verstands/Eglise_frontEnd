@@ -46,7 +46,7 @@ const NavBar = () => {
                         </li>
 
                         <li className="sidebar-item">
-                            <Link className="sidebar-link" to="ui-buttons.html">
+                            <Link className="sidebar-link" to="/statistique">
                                 <i className="align-middle" data-feather="square"></i> <span className="align-middle">Gestion statistique</span>
                             </Link>
                         </li>
