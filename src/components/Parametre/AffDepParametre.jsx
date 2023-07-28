@@ -12,7 +12,8 @@ const AffecterMenuDep = () => {
     const [SelectedDepartement, setSelectedDepartement] = useState("");
     const [SelectedMembre, setSelectedMembre] = useState("");
     const departement_data = useSelector((state) => state.deparmentReduceur);
-    const membre = useSelector((state) => state.menuReducer);
+    const membre = useSelector((state) => state.menusReducer);
+    
 
     const handleSave = async (e) => {
         e.preventDefault();

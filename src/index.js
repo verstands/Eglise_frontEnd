@@ -29,6 +29,7 @@ import { getProfil } from './actions/Profil';
 import { getMenu } from './actions/MenuAction';
 import { getStatistiqueMembre } from './actions/StatistiqueAction';
 import { getMenuAffecter } from './actions/AffecterDep';
+import { getMenuDepartement } from './actions/MenuDepartementAction';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -57,6 +58,8 @@ store.dispatch(getplanning())
 store.dispatch(getCategorieMateriel())
 store.dispatch(getProfil())
 store.dispatch(getMenuAffecter())
+store.dispatch(getMenuDepartement())
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

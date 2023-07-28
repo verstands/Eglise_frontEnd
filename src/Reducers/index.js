@@ -22,7 +22,7 @@ import ProfilReducer from "./ProfilReducer";
 import menuReducer from "./MenuReducer";
 import statistiqueReducer from "./StatistiqueReducer";
 import affecationMenuReducer from "./AffDepReducer";
-import menusReducer from "./MenusReducer";
+import menuDepartementReducer from "./MenuDepartementReducer";
 
 export default combineReducers({
     membreReducer,
@@ -48,6 +48,6 @@ export default combineReducers({
     menuReducer,
     statistiqueReducer,
     affecationMenuReducer,
-    menusReducer
+    menuDepartementReducer
     
 });

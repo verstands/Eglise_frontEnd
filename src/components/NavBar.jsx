@@ -6,6 +6,7 @@ const NavBar = () => {
     const [loading, setLoading] = useState(true);
     const menu = useSelector((state) => state.menuReducer);
 
+
     useEffect(() => {
         setLoading(false);
     }, [menu]);
