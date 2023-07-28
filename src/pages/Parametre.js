@@ -6,6 +6,7 @@ import DepartementParametre from '../components/Parametre/DepartementParametre'
 import CategorieMembre from '../components/Parametre/CategorieMembre'
 import CulteParametre from '../components/Parametre/CulteParametre'
 import OffrandeParametre from '../components/Parametre/OffrandeParametre'
+import DeviseParametre from '../components/Parametre/DeviseParametre'
 
 const Parametre = () => {
   return (
@@ -146,7 +147,7 @@ const Parametre = () => {
                                         <div class="tab-pane p-20" id="c" role="tabpanel">
                                             <OffrandeParametre />
                                         </div><div class="tab-pane p-20" id="d" role="tabpanel">
-                                            
+                                            <DeviseParametre />
                                         </div>
                                         <div class="tab-pane p-20" id="e" role="tabpanel">
                                             

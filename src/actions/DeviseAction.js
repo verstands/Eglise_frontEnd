@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 export const GET_DEVISE = "GET_DEVISE";
 export const DELETE_DEVISE = "DELETE_DEVISE";
+export const ADD_DEVISE = "ADD_DEVISE";
 const url = "http://localhost:5000/api/";
 
 
@@ -57,3 +58,43 @@ export const deleteDevise = (id) => {
         });
     };
 };
+
+
+export const addDevise = (postData) => {
+    return (dispatch) => {
+        return axios.post(`${url}devise`, postData,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                dispatch({ type: ADD_DEVISE, payload: postData })
+                Swal.fire({
+                    icon: 'success',
+                    text: `${response.data.message}`,
+                    confirmButtonText: 'OK'
+                })
+            }).catch((error) => {
+                if (error.response && error.response.status === 422) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
+                } else if (error.response.status === 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Erreur de la connexion !!!',
+                        confirmButtonText: 'OK'
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `${error.response.data.message}`,
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
+    }
+}
