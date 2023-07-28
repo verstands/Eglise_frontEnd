@@ -20,6 +20,7 @@ import PlannigReducer from "./PlanningReducer";
 import categorieMaterielReducer from "./CategorieMaterielReducer";
 import ProfilReducer from "./ProfilReducer";
 import menuReducer from "./MenuReducer";
+import statistiqueReducer from "./StatistiqueReducer";
 
 export default combineReducers({
     membreReducer,
@@ -42,6 +43,7 @@ export default combineReducers({
     PlannigReducer,
     categorieMaterielReducer,
     ProfilReducer,
-    menuReducer
+    menuReducer,
+    statistiqueReducer
     
 });

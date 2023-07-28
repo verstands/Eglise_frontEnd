@@ -57,16 +57,6 @@ const Parametre = () => {
                                             <a
                                                 class="nav-link"
                                                 data-bs-toggle="tab"
-                                                href="#pro"
-                                                role="tab"
-                                            ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fas fa-user-circle"></i>Profession</span></a
-                                            >
-                                        </li>
-                                        <li class="nav-item">
-                                            <a
-                                                class="nav-link"
-                                                data-bs-toggle="tab"
                                                 href="#a"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
@@ -135,9 +125,6 @@ const Parametre = () => {
                                             <DepartementParametre />
                                         </div>
                                         <div class="tab-pane p-20" id="mouve" role="tabpanel">
-                                            
-                                        </div>
-                                        <div class="tab-pane p-20" id="pro" role="tabpanel">
                                             
                                         </div>
                                         <div class="tab-pane p-20" id="a" role="tabpanel">

@@ -27,12 +27,14 @@ import { getplanning } from './actions/PlanningAction';
 import { getCategorieMateriel } from './actions/CategorieMaterielAction';
 import { getProfil } from './actions/Profil';
 import { getMenu } from './actions/MenuAction';
+import { getStatistiqueMembre } from './actions/StatistiqueAction';
 
 const store = configureStore({
   reducer : rootReducer,
   devTools : true,
 })
 store.dispatch(getMenu())
+store.dispatch(getStatistiqueMembre())
 store.dispatch(getMembre())
 store.dispatch(getMembreEnfant())
 store.dispatch(getMouvements())

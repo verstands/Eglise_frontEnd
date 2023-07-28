@@ -26,9 +26,9 @@ const Addmembre = () => {
             adresse: form.current[6].value,
             datenaissance: form.current[7].value,
             etatcivil: form.current[8].value,
-            profession: form.current[9].value,
-            activite: form.current[10].value,
-            password: form.current[11].value,
+            profession: 0,
+            activite: 0,
+            password: form.current[9].value,
         }
         await dispatch(addMembre(postData));
         dispatch(getMembre())
@@ -103,12 +103,6 @@ const Addmembre = () => {
                                                     })
                                                 }
                                             </select>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <label htmlFor="">Profetion</label>
-                                            <select name="" className="form-control" >
-                                                
-                                            </select><br />
                                         </div>
                                         <div className="col-md-4">
                                             <label htmlFor="">Mot de passe</label>
