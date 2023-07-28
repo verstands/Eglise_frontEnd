@@ -4,6 +4,7 @@ import NavOt from '../components/NavOt'
 import Caisse from '../components/Parametre/caisse'
 import DepartementParametre from '../components/Parametre/DepartementParametre'
 import CategorieMembre from '../components/Parametre/CategorieMembre'
+import CulteParametre from '../components/Parametre/CulteParametre'
 
 const Parametre = () => {
   return (
@@ -139,7 +140,7 @@ const Parametre = () => {
                                             <CategorieMembre />
                                         </div>
                                         <div class="tab-pane p-20" id="b" role="tabpanel">
-                                            
+                                            <CulteParametre />
                                         </div>
                                         <div class="tab-pane p-20" id="c" role="tabpanel">
                                             

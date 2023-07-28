@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 export const GET_CULTE = "GET_CULTE";
 export const DELETE_CULTE = "DELETE_CULTE";
+export const ADD_CULTE = "ADD_CULTE";
 
 const url = "http://localhost:5000/api/";
 
@@ -57,3 +58,43 @@ export const deleteCulte = (id) => {
         });
     };
 };
+
+
+export const addCulte = (postData) => {
+    return (dispatch) => {
+        return axios.post(`${url}culte`, postData,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                dispatch({ type: ADD_CULTE, payload: postData })
+                Swal.fire({
+                    icon: 'success',
+                    text: `${response.data.message}`,
+                    confirmButtonText: 'OK'
+                })
+            }).catch((error) => {
+                if (error.response && error.response.status === 422) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
+                } else if (error.response.status === 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Erreur de la connexion !!!',
+                        confirmButtonText: 'OK'
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `${error.response.data.message}`,
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
+    }
+}
