@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 export const GET_CAISSE = "GET_CAISSE";
 export const DELETE_CAISSE = "DELETE_CAISSE";
+export const ADD_CAISSE = "ADD_CAISSE";
 const url = "http://localhost:5000/api/";
 
 
@@ -57,3 +58,42 @@ export const deleteCaisse = (id) => {
         });
     };
 };
+
+export const addCaisse = (postData) => {
+    return (dispatch) => {
+        return axios.post(`${url}caisse`, postData,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                dispatch({ type: ADD_CAISSE, payload: postData })
+                Swal.fire({
+                    icon: 'success',
+                    text: `${response.data.message}`,
+                    confirmButtonText: 'OK'
+                })
+            }).catch((error) => {
+                if (error.response && error.response.status === 422) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
+                } else if (error.response.status === 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Erreur de la connexion !!!',
+                        confirmButtonText: 'OK'
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `${error.response.data.message}`,
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
+    }
+}

@@ -11,7 +11,7 @@ function CaisseTableau({caisse, id, devise, montant}) {
             <td className="d-none d-xl-table-cell">{montant}</td>
             <td className="d-none d-xl-table-cell">{devise && devise.devise}</td>
             <td className="d-none d-md-table-cell">
-                <button className="btn-lg bg-danger btn" onClick={() => dispatch(deleteCaisse())}>
+                <button className="btn-lg bg-danger btn" onClick={() => dispatch(deleteCaisse(id))}>
                     <i className="fa fa-trash" style={{ color: 'white' }}></i>
                 </button>&nbsp;
             </td>

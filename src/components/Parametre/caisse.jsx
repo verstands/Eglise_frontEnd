@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CaisseTableau from '../Tableau/CaisseTableau';
+import { addCaisse, getCaisse } from '../../actions/CaisseAction';
 
 function Caisse() {
   const dispatch = useDispatch();
   const caisse = useSelector((state) => state.caisseReducer);
+  const devise = useSelector((state) => state.deviseReducer);
+  const form = useRef();
   const handleSave = (e) => {
     e.preventDefault();
-    
+    const data = {
+        nom_caisse: form.current[0].value,
+        montant: form.current[1].value,
+        devise_id: form.current[2].value
+    };
+    dispatch(addCaisse(data));
+    dispatch(getCaisse(data));
   }
   return (
     <>
@@ -17,11 +26,27 @@ function Caisse() {
                     <h1 class="text-center">Caisse</h1>
                 </div>
                 <hr />
-                <form  onSubmit={(e) => handleSave(e)}>
+                <form ref={form}  onSubmit={(e) => handleSave(e)}>
                     <div className="row">
                         <div className="col-md-6">
                             <label htmlFor="">Nom caisse</label>
                             <input name="caise" className='form-control' type="text"/>
+                        </div>
+                        <div className="col-md-6">
+                            <label htmlFor="">Montant</label>
+                            <input name="caise" className='form-control' type="number"/>
+                        </div>
+                        <div className="col-md-6">
+                            <label htmlFor="">Devise</label>
+                           <select className='form-control' name="" id="">
+                                {
+                                    devise.map((de) => {
+                                        return(
+                                            <option key={de.id} value={de.id}>{de.devise}</option>
+                                        )
+                                    })
+                                }
+                           </select>
                         </div>
                         <br />
                         <br />
