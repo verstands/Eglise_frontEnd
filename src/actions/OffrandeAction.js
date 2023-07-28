@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 export const GET_OFFRANDE = "GET_OFFRANDE";
 export const DELETE_OFFRANDE = "DELETE_OFFRANDE";
+export const ADD_OFFRANDE = "ADD_OFFRANDE";
 const url = "http://localhost:5000/api/";
 
 
@@ -35,7 +36,7 @@ export const deleteOffrande = (id) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`${url}typeoffrandes/${id}`, {
+                    .delete(`${url}typeoffrande/${id}`, {
                         headers: {
                             Accept: 'application/json',
                             'Content-Type': 'application/json',
@@ -57,3 +58,43 @@ export const deleteOffrande = (id) => {
         });
     };
 };
+
+
+export const addOffrande = (postData) => {
+    return (dispatch) => {
+        return axios.post(`${url}typeoffrande`, postData,
+            {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: Token()
+                }
+            }).then((response) => {
+                dispatch({ type: ADD_OFFRANDE, payload: postData })
+                Swal.fire({
+                    icon: 'success',
+                    text: `${response.data.message}`,
+                    confirmButtonText: 'OK'
+                })
+            }).catch((error) => {
+                if (error.response && error.response.status === 422) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `Tous les champs sont obligatoire !`,
+                    });
+                } else if (error.response.status === 500) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Erreur de la connexion !!!',
+                        confirmButtonText: 'OK'
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: `${error.response.data.message}`,
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
+    }
+}
