@@ -67,7 +67,7 @@ export const addDepartement = (data) => {
 export const deleteDepartement = (id) => {
     return (dispatch) => {
         Swal.fire({
-            title: 'Êtes-vous sûr de vouloir supprimer ce Categorie ?',
+            title: 'Êtes-vous sûr de vouloir supprimer departement ?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Oui, supprimer',

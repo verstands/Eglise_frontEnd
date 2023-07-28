@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import NavOt from '../components/NavOt'
 import Caisse from '../components/Parametre/caisse'
+import DepartementParametre from '../components/Parametre/DepartementParametre'
 
 const Parametre = () => {
   return (
@@ -30,7 +31,7 @@ const Parametre = () => {
                                             <a
                                                 class="nav-link"
                                                 data-bs-toggle="tab"
-                                                href="#home"
+                                                href="#departement"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
                                                 <span class="hidden-xs-down"><i class="fa-solid fa-building"></i>Departement</span></a
@@ -123,6 +124,9 @@ const Parametre = () => {
                                             <div class="p-20">
                                                 <Caisse />
                                             </div>
+                                        </div>
+                                        <div class="tab-pane p-20" id="departement" role="tabpanel">
+                                            <DepartementParametre />
                                         </div>
                                     </div>
                                 </div>

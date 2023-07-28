@@ -40,7 +40,7 @@ function Caisse() {
                             <label htmlFor="">Devise</label>
                            <select className='form-control' name="" id="">
                                 {
-                                    devise.map((de) => {
+                                   Array.isArray(devise) && devise.map((de) => {
                                         return(
                                             <option key={de.id} value={de.id}>{de.devise}</option>
                                         )
