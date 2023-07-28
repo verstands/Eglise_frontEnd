@@ -4,29 +4,24 @@ import { Link } from "react-router-dom";
 import { addMembreAffecter, getMembreAffecter } from "../../actions/Affecter.action";
 import Select from "react-select";
 import AffecterTableau from "../Tableau/affecterTableau";
+import { addMenuAffecter, getMenuAffecter } from "../../actions/AffecterDep";
 
 
-const AffecterMembre = () => {
+const AffecterMenuDep = () => {
     const dispatch = useDispatch();
-    const [selectCash, setselectCash] = useState("0");
     const [SelectedDepartement, setSelectedDepartement] = useState("");
     const [SelectedMembre, setSelectedMembre] = useState("");
     const departement_data = useSelector((state) => state.deparmentReduceur);
     const membre = useSelector((state) => state.menuReducer);
-    const affectation_data = useSelector((state) => state.affecationReducer);
 
-    const handleChangeRadio = async (e) => {
-        setselectCash(e.target.value);
-    }
     const handleSave = async (e) => {
         e.preventDefault();
         const data = {
-            nom_membre: SelectedMembre,
-            departement_id: SelectedDepartement,
-            state: selectCash
+            id_menu: SelectedMembre,
+            id_departement	: SelectedDepartement,
         };
-        dispatch(getMembreAffecter());
-        dispatch(addMembreAffecter(data));
+        dispatch(getMenuAffecter());
+        dispatch(addMenuAffecter(data));
     }
 
     const handleChange = (selectedOption) => {
@@ -51,7 +46,7 @@ const AffecterMembre = () => {
 
     const handleMembre = () => {
         const membres = Array.isArray(membre) && membre.map((vh) => ({
-            label: vh.nom + " " + vh.prenom,
+            label: vh.nom_menu,
             value: vh.id,
         }));
         return (
@@ -65,7 +60,7 @@ const AffecterMembre = () => {
         <>
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h1 class="text-center">Affecter un membre de departement</h1>
+                    <h1 class="text-center">Affecter un menu dans departement</h1>
                 </div>
                 <hr />
                 <form  onSubmit={(e) => handleSave(e)}>
@@ -78,13 +73,11 @@ const AffecterMembre = () => {
                             <label>Departement</label>
                             {handleDepartement()}
                         </div>
-                        <div className="col-md-4">
-                            <input name="v" type="radio" onChange={handleChangeRadio} checked={selectCash === "1"} value="1" placeholder="Departement" />Cochet tout
-                            <input name="v" type="radio" onChange={handleChangeRadio} checked={selectCash === "0"} value="0" placeholder="Departement" />Decochet tout
-                        </div>
+                        <br />
+                        <br />
                         <br />
                         <div className="col-md-12">
-                            <button className="btn btn-primary">Valider</button>
+                            <button className="btn btn-primary">Enegistrer</button>
                         </div>
                     </div>
                 </form>
@@ -97,13 +90,13 @@ const AffecterMembre = () => {
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
-                            <th>Mmebre</th>
+                            <th>Menu</th>
                             <th>Dpartement</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {Array.isArray(affectation_data) && affectation_data
+                        {/*Array.isArray(affectation_data) && affectation_data
                             .map((dataEnfant, indexEnfant) => (
                                 <AffecterTableau
                                     membre={dataEnfant.nom_membre}
@@ -111,7 +104,7 @@ const AffecterMembre = () => {
                                     departement={dataEnfant.departement_id}
                                     key={indexEnfant}
                                 />
-                            ))
+                            ))*/
                         }
                     </tbody>
                 </table>
@@ -120,4 +113,4 @@ const AffecterMembre = () => {
     )
 }
 
-export default AffecterMembre;
+export default AffecterMenuDep;

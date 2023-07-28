@@ -21,6 +21,8 @@ import categorieMaterielReducer from "./CategorieMaterielReducer";
 import ProfilReducer from "./ProfilReducer";
 import menuReducer from "./MenuReducer";
 import statistiqueReducer from "./StatistiqueReducer";
+import affecationMenuReducer from "./AffDepReducer";
+import menusReducer from "./MenusReducer";
 
 export default combineReducers({
     membreReducer,
@@ -44,6 +46,8 @@ export default combineReducers({
     categorieMaterielReducer,
     ProfilReducer,
     menuReducer,
-    statistiqueReducer
+    statistiqueReducer,
+    affecationMenuReducer,
+    menusReducer
     
 });

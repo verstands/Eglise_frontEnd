@@ -9,6 +9,7 @@ import OffrandeParametre from '../components/Parametre/OffrandeParametre'
 import DeviseParametre from '../components/Parametre/DeviseParametre'
 import DepenseParametre from '../components/Parametre/DepenseParametre'
 import MaterielParametre from '../components/Parametre/MaterielParametre'
+import AffecterMenuDep from '../components/Parametre/AffDepParametre'
 
 const Parametre = () => {
   return (
@@ -155,7 +156,7 @@ const Parametre = () => {
                                             <MaterielParametre />
                                         </div>
                                         <div class="tab-pane p-20" id="g" role="tabpanel">
-                                            <MaterielParametre />
+                                            <AffecterMenuDep />
                                         </div>
                                     </div>
                                 </div>

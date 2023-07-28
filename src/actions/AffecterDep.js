@@ -3,9 +3,9 @@ import Token from "../loadingErr/Token";
 import Swal from "sweetalert2";
 
 
-export const ADD_MEMBRE_AFFECTER = "ADD_MEMBRE_AFFECTER";
-export const GET_MEMEBRE_AFFECTER = "GET_MEMEBRE_AFFECTER";
-export const DELETE_AFFECTER = "DELETE_AFFECTER";
+export const ADD_MENU_AFFECTER = "ADD_MENU_AFFECTER";
+export const GET_MENU_AFFECTER = "GET_MENU_AFFECTER";
+export const DELETE_MENU_AFFECTER = "DELETE_MENU_AFFECTER";
 const url = "http://localhost:5000/api/";
 
 export const getMenuAffecter = () => {
@@ -17,16 +17,16 @@ export const getMenuAffecter = () => {
                 Authorization: Token()
             }
         }).then((response) => {
-            dispatch({ type: GET_MEMEBRE_AFFECTER, payload: response.data.data })
+            dispatch({ type: GET_MENU_AFFECTER, payload: response.data.data })
         }).catch((error) => {
-            
+
         })
     }
 }
 
 export const addMenuAffecter = (data) => {
     return (dispatch) => {
-        return axios.post(`${url}AffectationMenu`,data,
+        return axios.post(`${url}AffectationMenu`, data,
             {
                 headers: {
                     Accept: 'application/json',
@@ -82,7 +82,7 @@ export const deleteMenuAffecter = (id) => {
                         }
                     })
                     .then((response) => {
-                        dispatch({ type: DELETE_MENU_AAFECTER, payload: id });
+                        dispatch({ type: DELETE_MENU_AFFECTER, payload: id });
                         Swal.fire({
                             icon: 'success',
                             text: `${response.data.message}`,
@@ -96,20 +96,5 @@ export const deleteMenuAffecter = (id) => {
         });
     };
 };
-
-export const getMouvementId = (id) => {
-    return axios.get(`${url}mouvement/${id}`, {
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: Token()
-        }
-    }).then((response) => {
-        return response.data.data;
-    }).catch((error) => {
-        alert(error)
-    })
-
-}
 
 

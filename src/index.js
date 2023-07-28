@@ -28,6 +28,7 @@ import { getCategorieMateriel } from './actions/CategorieMaterielAction';
 import { getProfil } from './actions/Profil';
 import { getMenu } from './actions/MenuAction';
 import { getStatistiqueMembre } from './actions/StatistiqueAction';
+import { getMenuAffecter } from './actions/AffecterDep';
 
 const store = configureStore({
   reducer : rootReducer,
@@ -55,6 +56,7 @@ store.dispatch(getTypeMouvement())
 store.dispatch(getplanning())
 store.dispatch(getCategorieMateriel())
 store.dispatch(getProfil())
+store.dispatch(getMenuAffecter())
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
