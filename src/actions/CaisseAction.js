@@ -27,7 +27,7 @@ export const getCaisse = () => {
 export const deleteCaisse = (id) => {
     return (dispatch) => {
         Swal.fire({
-            title: 'Êtes-vous sûr de vouloir supprimer ce membre ?',
+            title: 'Êtes-vous sûr de vouloir supprimer cette caisse ?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Oui, supprimer',

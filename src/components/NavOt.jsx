@@ -168,10 +168,7 @@ const NavOt = () => {
                                 alt="Charles Hall" /> <span class="text-dark">{profil.nom + " " + profil.postnom}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="#">
-                                {
-                                    profil.email 
-                                }
+                            <a class="dropdown-item" href="#">{profil.email }
                             </a>
                             <hr />
                             <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"

@@ -39,6 +39,7 @@ import MaterielPdf from '../components/Materiel/MaterielPdf';
 import RapportMaterielPdf from '../components/Materiel/RapportMaterielPdf';
 import Discipline from '../pages/Discipline';
 import Statistique from '../pages/Statistique';
+import Parametre from '../pages/Parametre';
 
 class IndexRoute extends Component {
     render(){
@@ -81,6 +82,7 @@ class IndexRoute extends Component {
                 <Route path="/RapportMaterielPdf"  element={<RapportMaterielPdf />} />
                 <Route path="/Discipline"  element={<Discipline />} />
                 <Route path="/statistique"  element={<Statistique />} />
+                <Route path="/Parametre"  element={<Parametre />} />
                 <Route path="/*"  element={<Erreur />} />
             </Routes> 
         );
