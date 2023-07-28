@@ -22,10 +22,10 @@ const Login = () => {
             let token = JSON.stringify(response.data.token);
             let departement = JSON.stringify(response.data.departement);
             let tokenT = token.substring(1, token.length - 1);
-            let departementT = departement.substring(1, token.length - 1);
             localStorage.setItem("token", tokenT)
-            localStorage.setItem("departement", departementT)
+            localStorage.setItem("dep", departement)
             navigate('/dashboad')
+            //alert(localStorage.getItem("dep"))
             window.location.reload();
         }).catch((error) => {
             if (error.response.status === 401) {

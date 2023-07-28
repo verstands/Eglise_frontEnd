@@ -10,7 +10,7 @@ const url = "http://localhost:5000/api/";
 
 export const getMenuAffecter = () => {
     return (dispatch) => {
-        return axios.get(`${url}AffectationMenu`, {
+        return axios.get(`${url}AffectationMenus`, {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export const addMenuAffecter = (data) => {
 export const deleteMenuAffecter = (id) => {
     return (dispatch) => {
         Swal.fire({
-            title: 'Êtes-vous sûr de vouloir supprimer ce membre ?',
+            title: 'Êtes-vous sûr de vouloir supprimer l\'affectation ?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Oui, supprimer',

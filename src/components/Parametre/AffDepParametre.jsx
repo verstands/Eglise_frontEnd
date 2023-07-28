@@ -5,6 +5,7 @@ import { addMembreAffecter, getMembreAffecter } from "../../actions/Affecter.act
 import Select from "react-select";
 import AffecterTableau from "../Tableau/affecterTableau";
 import { addMenuAffecter, getMenuAffecter } from "../../actions/AffecterDep";
+import MenuDepTableau from "../Tableau/AffDepTableau";
 
 
 const AffecterMenuDep = () => {
@@ -12,7 +13,10 @@ const AffecterMenuDep = () => {
     const [SelectedDepartement, setSelectedDepartement] = useState("");
     const [SelectedMembre, setSelectedMembre] = useState("");
     const departement_data = useSelector((state) => state.deparmentReduceur);
-    const membre = useSelector((state) => state.menusReducer);
+    const membre = useSelector((state) => state.menuDepartementReducer);
+    const affectation_data = useSelector((state) => state.affecationMenuReducer);
+    let n = 1;
+    
     
 
     const handleSave = async (e) => {
@@ -21,8 +25,8 @@ const AffecterMenuDep = () => {
             id_menu: SelectedMembre,
             id_departement	: SelectedDepartement,
         };
-        dispatch(getMenuAffecter());
         dispatch(addMenuAffecter(data));
+        dispatch(getMenuAffecter());
     }
 
     const handleChange = (selectedOption) => {
@@ -85,27 +89,34 @@ const AffecterMenuDep = () => {
             </div>
             <hr />
             <div>
+                <div className="row">
                 <div className="col-md-6">
                     &nbsp;&nbsp;<Link to="/AffecterPdf" className="btn btn-success btn-lg "><span ><i className="fa fa-print"></i></span></Link>
+                </div>
+                <div className="col-md-6">
+                
+                </div>
                 </div>
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
+                            <th>N°</th>
                             <th>Menu</th>
                             <th>Dpartement</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/*Array.isArray(affectation_data) && affectation_data
+                        {Array.isArray(affectation_data) && affectation_data
                             .map((dataEnfant, indexEnfant) => (
-                                <AffecterTableau
-                                    membre={dataEnfant.nom_membre}
+                                <MenuDepTableau
+                                    menu={dataEnfant.id_menu}
+                                    n={n++}
                                     id={dataEnfant.id}
-                                    departement={dataEnfant.departement_id}
+                                    departement={dataEnfant.id_departement}
                                     key={indexEnfant}
                                 />
-                            ))*/
+                            ))
                         }
                     </tbody>
                 </table>

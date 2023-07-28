@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SessionDepartement = () => {
-    return `Bearer ${localStorage.getItem("departement")}`;
+    return 1;
 };
 
 export default SessionDepartement;
