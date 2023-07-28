@@ -32,7 +32,7 @@ const store = configureStore({
   reducer : rootReducer,
   devTools : true,
 })
-
+store.dispatch(getMenu())
 store.dispatch(getMembre())
 store.dispatch(getMembreEnfant())
 store.dispatch(getMouvements())
@@ -53,7 +53,7 @@ store.dispatch(getTypeMouvement())
 store.dispatch(getplanning())
 store.dispatch(getCategorieMateriel())
 store.dispatch(getProfil())
-store.dispatch(getMenu())
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
