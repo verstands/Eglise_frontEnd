@@ -110,7 +110,17 @@ const Parametre = () => {
                                                 href="#f"
                                                 role="tab"
                                             ><span class="hidden-sm-up"></span>
-                                                <span class="hidden-xs-down"><i class="fa-solid fa-hammer"></i>ype materiel</span></a
+                                                <span class="hidden-xs-down"><i class="fa-solid fa-hammer"></i>materiel</span></a
+                                            >
+                                        </li>
+                                        <li class="nav-item">
+                                            <a
+                                                class="nav-link"
+                                                data-bs-toggle="tab"
+                                                href="#g"
+                                                role="tab"
+                                            ><span class="hidden-sm-up"></span>
+                                                <span class="hidden-xs-down"><i class="fa-solid fa-exchange "></i>Aff. departemen</span></a
                                             >
                                         </li>
 
@@ -142,6 +152,9 @@ const Parametre = () => {
                                             <DepenseParametre />
                                         </div>
                                         <div class="tab-pane p-20" id="f" role="tabpanel">
+                                            <MaterielParametre />
+                                        </div>
+                                        <div class="tab-pane p-20" id="g" role="tabpanel">
                                             <MaterielParametre />
                                         </div>
                                     </div>
